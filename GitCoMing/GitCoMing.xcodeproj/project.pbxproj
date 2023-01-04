@@ -20,6 +20,18 @@
 		FFF182B82965B95F00E452C4 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFF182B72965B95F00E452C4 /* ReactorKit */; };
 		FFF182BB2965B97B00E452C4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFF182BA2965B97B00E452C4 /* SnapKit */; };
 		FFF182BE2965B99600E452C4 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = FFF182BD2965B99600E452C4 /* Then */; };
+		FFF182C92965BCDB00E452C4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182C82965BCDB00E452C4 /* SplashViewController.swift */; };
+		FFF182CB2965BE0500E452C4 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182CA2965BE0400E452C4 /* UIFont+Extensions.swift */; };
+		FFF182CD2965C0B800E452C4 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182CC2965C0B800E452C4 /* UIColor+Extensions.swift */; };
+		FFF182CF2965C8C000E452C4 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182CE2965C8C000E452C4 /* UIViewController+Extensions.swift */; };
+		FFF182D32965DC7500E452C4 /* SplashViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182D22965DC7500E452C4 /* SplashViewReactor.swift */; };
+		FFF182D92965E53200E452C4 /* LoginDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182D82965E53200E452C4 /* LoginDIContainer.swift */; };
+		FFF182DD2965E6D200E452C4 /* BaseDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182DC2965E6D200E452C4 /* BaseDIContainer.swift */; };
+		FFF182DF2965E76B00E452C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182DE2965E76B00E452C4 /* LoginViewController.swift */; };
+		FFF182E52965F99C00E452C4 /* Entity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182E42965F99C00E452C4 /* Entity+Extensions.swift */; };
+		FFF182E82965FF5000E452C4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FFF182E72965FF5000E452C4 /* Alamofire */; };
+		FFF182EB2965FF8300E452C4 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182EA2965FF8300E452C4 /* ApiHelper.swift */; };
+		FFF182EE2966000000E452C4 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182ED2966000000E452C4 /* BaseRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +62,17 @@
 		FF9CE3B22965B454008265A0 /* GitCoMingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitCoMingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9CE3B62965B454008265A0 /* GitCoMingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCoMingUITests.swift; sourceTree = "<group>"; };
 		FF9CE3B82965B454008265A0 /* GitCoMingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCoMingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FFF182C82965BCDB00E452C4 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		FFF182CA2965BE0400E452C4 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		FFF182CC2965C0B800E452C4 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		FFF182CE2965C8C000E452C4 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		FFF182D22965DC7500E452C4 /* SplashViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewReactor.swift; sourceTree = "<group>"; };
+		FFF182D82965E53200E452C4 /* LoginDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDIContainer.swift; sourceTree = "<group>"; };
+		FFF182DC2965E6D200E452C4 /* BaseDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDIContainer.swift; sourceTree = "<group>"; };
+		FFF182DE2965E76B00E452C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FFF182E42965F99C00E452C4 /* Entity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+Extensions.swift"; sourceTree = "<group>"; };
+		FFF182EA2965FF8300E452C4 /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
+		FFF182ED2966000000E452C4 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFF182B02965B90E00E452C4 /* RxSwift in Frameworks */,
+				FFF182E82965FF5000E452C4 /* Alamofire in Frameworks */,
 				FFF182B52965B93F00E452C4 /* RxDataSources in Frameworks */,
 				FFF182B32965B93F00E452C4 /* Differentiator in Frameworks */,
 				FFF182BE2965B99600E452C4 /* Then in Frameworks */,
@@ -142,6 +166,10 @@
 		FFF182C02965B9DB00E452C4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FFF182E92965FF6400E452C4 /* APIService */,
+				FFF182C32965BA2300E452C4 /* Extensions */,
+				FFF182DA2965E5E200E452C4 /* Domain */,
+				FFF182D72965E4F900E452C4 /* Dependency */,
 				FFF182C22965B9FF00E452C4 /* Presentation */,
 				FFF182C12965B9E700E452C4 /* Application */,
 			);
@@ -160,7 +188,8 @@
 		FFF182C22965B9FF00E452C4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FFF182C32965BA2300E452C4 /* Extensions */,
+				FFF182D62965E4E900E452C4 /* Login */,
+				FFF182C62965BCBB00E452C4 /* Splash */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -168,8 +197,78 @@
 		FFF182C32965BA2300E452C4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FFF182CA2965BE0400E452C4 /* UIFont+Extensions.swift */,
+				FFF182CC2965C0B800E452C4 /* UIColor+Extensions.swift */,
+				FFF182CE2965C8C000E452C4 /* UIViewController+Extensions.swift */,
+				FFF182E42965F99C00E452C4 /* Entity+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FFF182C62965BCBB00E452C4 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				FFF182C72965BCCD00E452C4 /* Reactor */,
+				FFF182C82965BCDB00E452C4 /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		FFF182C72965BCCD00E452C4 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				FFF182D22965DC7500E452C4 /* SplashViewReactor.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
+		FFF182D62965E4E900E452C4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FFF182DE2965E76B00E452C4 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FFF182D72965E4F900E452C4 /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				FFF182DB2965E6BC00E452C4 /* Base */,
+				FFF182D82965E53200E452C4 /* LoginDIContainer.swift */,
+			);
+			path = Dependency;
+			sourceTree = "<group>";
+		};
+		FFF182DA2965E5E200E452C4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		FFF182DB2965E6BC00E452C4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FFF182DC2965E6D200E452C4 /* BaseDIContainer.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FFF182E92965FF6400E452C4 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				FFF182EC2965FFDC00E452C4 /* Router */,
+				FFF182EA2965FF8300E452C4 /* ApiHelper.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		FFF182EC2965FFDC00E452C4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FFF182ED2966000000E452C4 /* BaseRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +295,7 @@
 				FFF182B72965B95F00E452C4 /* ReactorKit */,
 				FFF182BA2965B97B00E452C4 /* SnapKit */,
 				FFF182BD2965B99600E452C4 /* Then */,
+				FFF182E72965FF5000E452C4 /* Alamofire */,
 			);
 			productName = GitCoMing;
 			productReference = FF9CE3922965B452008265A0 /* GitCoMing.app */;
@@ -275,6 +375,7 @@
 				FFF182B62965B95F00E452C4 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				FFF182B92965B97B00E452C4 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FFF182BC2965B99600E452C4 /* XCRemoteSwiftPackageReference "Then" */,
+				FFF182E62965FF5000E452C4 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = FF9CE3932965B452008265A0 /* Products */;
 			projectDirPath = "";
@@ -317,8 +418,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF182EB2965FF8300E452C4 /* ApiHelper.swift in Sources */,
+				FFF182D32965DC7500E452C4 /* SplashViewReactor.swift in Sources */,
 				FF9CE3962965B452008265A0 /* AppDelegate.swift in Sources */,
+				FFF182D92965E53200E452C4 /* LoginDIContainer.swift in Sources */,
+				FFF182CD2965C0B800E452C4 /* UIColor+Extensions.swift in Sources */,
+				FFF182E52965F99C00E452C4 /* Entity+Extensions.swift in Sources */,
+				FFF182DD2965E6D200E452C4 /* BaseDIContainer.swift in Sources */,
+				FFF182EE2966000000E452C4 /* BaseRouter.swift in Sources */,
 				FF9CE3982965B452008265A0 /* SceneDelegate.swift in Sources */,
+				FFF182CB2965BE0500E452C4 /* UIFont+Extensions.swift in Sources */,
+				FFF182CF2965C8C000E452C4 /* UIViewController+Extensions.swift in Sources */,
+				FFF182DF2965E76B00E452C4 /* LoginViewController.swift in Sources */,
+				FFF182C92965BCDB00E452C4 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -459,7 +571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -481,9 +593,8 @@
 				INFOPLIST_FILE = GitCoMing/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,9 +620,8 @@
 				INFOPLIST_FILE = GitCoMing/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -683,6 +793,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		FFF182E62965FF5000E452C4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -720,6 +838,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FFF182BC2965B99600E452C4 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		FFF182E72965FF5000E452C4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFF182E62965FF5000E452C4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
