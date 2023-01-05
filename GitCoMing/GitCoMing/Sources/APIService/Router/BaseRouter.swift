@@ -12,13 +12,34 @@ import Foundation
 
 //MARK: NetWork API
 public enum NetWorkAPi {
-    case signIn
+    case signInCode
 }
 
 //MARK: EndPoint Initialization
 public struct NetWorkEndPoint {
     //MARK: Property
     public let networkAPi: NetWorkAPi
+    
+    static var clientId: String {
+        guard let infoClientId = Bundle.infoPlistValue(forKey: "GCMClientId") as? String else { return "" }
+        return infoClientId
+    }
+    
+    static var redirectUrI: String {
+        guard let infoRedirectUrI = Bundle.infoPlistValue(forKey: "GCMRedirectURI") as? String else { return "" }
+        return infoRedirectUrI
+    }
+    
+    static var scope: String {
+        guard let infoScope = Bundle.infoPlistValue(forKey: "GCMScope") as? String else { return "" }
+        return infoScope
+    }
+    
+    static var uuid: String {
+        
+        return UUID().uuidString
+    }
+    
     
     public init(networkAPi: NetWorkAPi) {
         self.networkAPi = networkAPi
@@ -31,7 +52,7 @@ protocol NetWorkConfigure: URLRequestConvertible {
     var path: String { get }
     var method: HTTPMethod { get }
     var headers: HTTPHeaders? { get }
-    var parameter: Parameters { get }
+    var parameter: Parameters? { get }
     var encoding: ParameterEncoding { get }
 }
 
@@ -44,36 +65,36 @@ extension NetWorkEndPoint: URLRequestConvertible {
     
     var path: String {
         switch networkAPi {
-        case .signIn:
+        case .signInCode:
             return "/login/oauth/authorize"
         }
     }
     
     var method: HTTPMethod {
         switch networkAPi {
-        case .signIn:
+        case .signInCode:
             return .get
         }
     }
     
     var headers: HTTPHeaders? {
         switch networkAPi {
-        case .signIn:
+        case .signInCode:
             return nil
         }
     }
     
-    var parameter: Parameters {
+    var parameter: Parameters? {
         switch networkAPi {
-        case .signIn:
-            return ["client_id": "1a75c931ee47226210d9"]
+        case .signInCode:
+            return nil
         }
     }
     
     var encoding: ParameterEncoding {
         switch networkAPi {
-        case .signIn:
-            return JSONEncoding.default
+        case .signInCode:
+            return URLEncoding.queryString
         }
     }
     

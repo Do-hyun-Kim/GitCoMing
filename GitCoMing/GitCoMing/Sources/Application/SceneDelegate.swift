@@ -32,9 +32,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate: CoordinatorDelegate {
     func didShowMainController() {
-        let loginController = LoginViewController()
+        let signInController = SignInDIContainer().makeViewController()
         
-        window?.rootViewController = loginController
+        window?.rootViewController = signInController
         window?.makeKeyAndVisible()
     }
     

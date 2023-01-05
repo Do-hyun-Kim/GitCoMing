@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF12231F2966E1B800418A1B /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12231E2966E1B800418A1B /* UIAlertController+Extensions.swift */; };
+		FF1223212966F0CE00418A1B /* CommonWebDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1223202966F0CD00418A1B /* CommonWebDIContainer.swift */; };
+		FF12232429671BFE00418A1B /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12232329671BFE00418A1B /* Bundle+Extensions.swift */; };
 		FF9CE3962965B452008265A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CE3952965B452008265A0 /* AppDelegate.swift */; };
 		FF9CE3982965B452008265A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CE3972965B452008265A0 /* SceneDelegate.swift */; };
 		FF9CE39F2965B453008265A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF9CE39E2965B453008265A0 /* Assets.xcassets */; };
 		FF9CE3AD2965B454008265A0 /* GitCoMingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CE3AC2965B454008265A0 /* GitCoMingTests.swift */; };
 		FF9CE3B72965B454008265A0 /* GitCoMingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CE3B62965B454008265A0 /* GitCoMingUITests.swift */; };
 		FF9CE3B92965B454008265A0 /* GitCoMingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CE3B82965B454008265A0 /* GitCoMingUITestsLaunchTests.swift */; };
+		FFCC88FB2966131000AAD594 /* CommonWebViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC88FA2966131000AAD594 /* CommonWebViewReactor.swift */; };
+		FFCC88FD296615AD00AAD594 /* ReactorKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC88FC296615AD00AAD594 /* ReactorKit+Extensions.swift */; };
+		FFCC89022966B66400AAD594 /* SignInViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC89012966B66400AAD594 /* SignInViewReactor.swift */; };
+		FFCC89042966B6AE00AAD594 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC89032966B6AE00AAD594 /* SignInViewController.swift */; };
+		FFCC890C2966C2B300AAD594 /* SignInDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCC890B2966C2B300AAD594 /* SignInDIContainer.swift */; };
 		FFF182AE2965B90E00E452C4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FFF182AD2965B90E00E452C4 /* RxCocoa */; };
 		FFF182B02965B90E00E452C4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFF182AF2965B90E00E452C4 /* RxSwift */; };
 		FFF182B32965B93F00E452C4 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = FFF182B22965B93F00E452C4 /* Differentiator */; };
@@ -25,13 +33,12 @@
 		FFF182CD2965C0B800E452C4 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182CC2965C0B800E452C4 /* UIColor+Extensions.swift */; };
 		FFF182CF2965C8C000E452C4 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182CE2965C8C000E452C4 /* UIViewController+Extensions.swift */; };
 		FFF182D32965DC7500E452C4 /* SplashViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182D22965DC7500E452C4 /* SplashViewReactor.swift */; };
-		FFF182D92965E53200E452C4 /* LoginDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182D82965E53200E452C4 /* LoginDIContainer.swift */; };
 		FFF182DD2965E6D200E452C4 /* BaseDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182DC2965E6D200E452C4 /* BaseDIContainer.swift */; };
-		FFF182DF2965E76B00E452C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182DE2965E76B00E452C4 /* LoginViewController.swift */; };
 		FFF182E52965F99C00E452C4 /* Entity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182E42965F99C00E452C4 /* Entity+Extensions.swift */; };
 		FFF182E82965FF5000E452C4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FFF182E72965FF5000E452C4 /* Alamofire */; };
 		FFF182EB2965FF8300E452C4 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182EA2965FF8300E452C4 /* ApiHelper.swift */; };
 		FFF182EE2966000000E452C4 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182ED2966000000E452C4 /* BaseRouter.swift */; };
+		FFF182F129660E8700E452C4 /* CommonWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF182F029660E8600E452C4 /* CommonWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +59,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF12231E2966E1B800418A1B /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
+		FF1223202966F0CD00418A1B /* CommonWebDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebDIContainer.swift; sourceTree = "<group>"; };
+		FF12232329671BFE00418A1B /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		FF9CE3922965B452008265A0 /* GitCoMing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitCoMing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9CE3952965B452008265A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF9CE3972965B452008265A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,17 +72,21 @@
 		FF9CE3B22965B454008265A0 /* GitCoMingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitCoMingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9CE3B62965B454008265A0 /* GitCoMingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCoMingUITests.swift; sourceTree = "<group>"; };
 		FF9CE3B82965B454008265A0 /* GitCoMingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCoMingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FFCC88FA2966131000AAD594 /* CommonWebViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebViewReactor.swift; sourceTree = "<group>"; };
+		FFCC88FC296615AD00AAD594 /* ReactorKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReactorKit+Extensions.swift"; sourceTree = "<group>"; };
+		FFCC89012966B66400AAD594 /* SignInViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewReactor.swift; sourceTree = "<group>"; };
+		FFCC89032966B6AE00AAD594 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		FFCC890B2966C2B300AAD594 /* SignInDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDIContainer.swift; sourceTree = "<group>"; };
 		FFF182C82965BCDB00E452C4 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		FFF182CA2965BE0400E452C4 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		FFF182CC2965C0B800E452C4 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		FFF182CE2965C8C000E452C4 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		FFF182D22965DC7500E452C4 /* SplashViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewReactor.swift; sourceTree = "<group>"; };
-		FFF182D82965E53200E452C4 /* LoginDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDIContainer.swift; sourceTree = "<group>"; };
 		FFF182DC2965E6D200E452C4 /* BaseDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDIContainer.swift; sourceTree = "<group>"; };
-		FFF182DE2965E76B00E452C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FFF182E42965F99C00E452C4 /* Entity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+Extensions.swift"; sourceTree = "<group>"; };
 		FFF182EA2965FF8300E452C4 /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
 		FFF182ED2966000000E452C4 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		FFF182F029660E8600E452C4 /* CommonWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +168,22 @@
 			path = GitCoMingUITests;
 			sourceTree = "<group>";
 		};
+		FFCC88F9296612FA00AAD594 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				FFCC88FA2966131000AAD594 /* CommonWebViewReactor.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
+		FFCC88FE29661FD400AAD594 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				FFCC89012966B66400AAD594 /* SignInViewReactor.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
 		FFF182BF2965B9D000E452C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +218,8 @@
 		FFF182C22965B9FF00E452C4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FFF182D62965E4E900E452C4 /* Login */,
+				FFF182EF29660E5A00E452C4 /* Common */,
+				FFF182D62965E4E900E452C4 /* SignIn */,
 				FFF182C62965BCBB00E452C4 /* Splash */,
 			);
 			path = Presentation;
@@ -201,6 +232,9 @@
 				FFF182CC2965C0B800E452C4 /* UIColor+Extensions.swift */,
 				FFF182CE2965C8C000E452C4 /* UIViewController+Extensions.swift */,
 				FFF182E42965F99C00E452C4 /* Entity+Extensions.swift */,
+				FFCC88FC296615AD00AAD594 /* ReactorKit+Extensions.swift */,
+				FF12231E2966E1B800418A1B /* UIAlertController+Extensions.swift */,
+				FF12232329671BFE00418A1B /* Bundle+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -222,19 +256,21 @@
 			path = Reactor;
 			sourceTree = "<group>";
 		};
-		FFF182D62965E4E900E452C4 /* Login */ = {
+		FFF182D62965E4E900E452C4 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				FFF182DE2965E76B00E452C4 /* LoginViewController.swift */,
+				FFCC88FE29661FD400AAD594 /* Reactor */,
+				FFCC89032966B6AE00AAD594 /* SignInViewController.swift */,
 			);
-			path = Login;
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		FFF182D72965E4F900E452C4 /* Dependency */ = {
 			isa = PBXGroup;
 			children = (
 				FFF182DB2965E6BC00E452C4 /* Base */,
-				FFF182D82965E53200E452C4 /* LoginDIContainer.swift */,
+				FFCC890B2966C2B300AAD594 /* SignInDIContainer.swift */,
+				FF1223202966F0CD00418A1B /* CommonWebDIContainer.swift */,
 			);
 			path = Dependency;
 			sourceTree = "<group>";
@@ -269,6 +305,15 @@
 				FFF182ED2966000000E452C4 /* BaseRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		FFF182EF29660E5A00E452C4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FFCC88F9296612FA00AAD594 /* Reactor */,
+				FFF182F029660E8600E452C4 /* CommonWebViewController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,16 +466,23 @@
 				FFF182EB2965FF8300E452C4 /* ApiHelper.swift in Sources */,
 				FFF182D32965DC7500E452C4 /* SplashViewReactor.swift in Sources */,
 				FF9CE3962965B452008265A0 /* AppDelegate.swift in Sources */,
-				FFF182D92965E53200E452C4 /* LoginDIContainer.swift in Sources */,
 				FFF182CD2965C0B800E452C4 /* UIColor+Extensions.swift in Sources */,
+				FFCC890C2966C2B300AAD594 /* SignInDIContainer.swift in Sources */,
 				FFF182E52965F99C00E452C4 /* Entity+Extensions.swift in Sources */,
 				FFF182DD2965E6D200E452C4 /* BaseDIContainer.swift in Sources */,
+				FFCC88FB2966131000AAD594 /* CommonWebViewReactor.swift in Sources */,
 				FFF182EE2966000000E452C4 /* BaseRouter.swift in Sources */,
+				FFCC88FD296615AD00AAD594 /* ReactorKit+Extensions.swift in Sources */,
 				FF9CE3982965B452008265A0 /* SceneDelegate.swift in Sources */,
+				FF12232429671BFE00418A1B /* Bundle+Extensions.swift in Sources */,
 				FFF182CB2965BE0500E452C4 /* UIFont+Extensions.swift in Sources */,
+				FFF182F129660E8700E452C4 /* CommonWebViewController.swift in Sources */,
 				FFF182CF2965C8C000E452C4 /* UIViewController+Extensions.swift in Sources */,
-				FFF182DF2965E76B00E452C4 /* LoginViewController.swift in Sources */,
+				FFCC89042966B6AE00AAD594 /* SignInViewController.swift in Sources */,
 				FFF182C92965BCDB00E452C4 /* SplashViewController.swift in Sources */,
+				FF12231F2966E1B800418A1B /* UIAlertController+Extensions.swift in Sources */,
+				FF1223212966F0CE00418A1B /* CommonWebDIContainer.swift in Sources */,
+				FFCC89022966B66400AAD594 /* SignInViewReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

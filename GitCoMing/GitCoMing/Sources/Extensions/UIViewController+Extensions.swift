@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Then
+
 import ReactorKit
 
 
@@ -19,6 +21,11 @@ open class BaseViewController<T: ReactorKit.Reactor>: UIViewController, ReactorK
     //MARK: Property
     public var disposeBag: DisposeBag = DisposeBag()
     public typealias Reactor = T
+    
+    lazy var activityIndicatorView = UIActivityIndicatorView().then{
+        $0.style = .medium
+        $0.color = .gray
+    }
     
     
     init(reactor: T? = nil) {
