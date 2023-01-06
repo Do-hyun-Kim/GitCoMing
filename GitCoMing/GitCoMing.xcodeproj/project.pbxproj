@@ -11,6 +11,7 @@
 		FF1223212966F0CE00418A1B /* CommonWebDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1223202966F0CD00418A1B /* CommonWebDIContainer.swift */; };
 		FF12232429671BFE00418A1B /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12232329671BFE00418A1B /* Bundle+Extensions.swift */; };
 		FF1223282968432F00418A1B /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1223272968432F00418A1B /* Token.swift */; };
+		FF12232E2968AA5800418A1B /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12232D2968AA5800418A1B /* UserDefaults+Extensions.swift */; };
 		FF9CE3962965B452008265A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CE3952965B452008265A0 /* AppDelegate.swift */; };
 		FF9CE3982965B452008265A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CE3972965B452008265A0 /* SceneDelegate.swift */; };
 		FF9CE39F2965B453008265A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF9CE39E2965B453008265A0 /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		FF1223202966F0CD00418A1B /* CommonWebDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebDIContainer.swift; sourceTree = "<group>"; };
 		FF12232329671BFE00418A1B /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		FF1223272968432F00418A1B /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		FF12232D2968AA5800418A1B /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		FF9CE3922965B452008265A0 /* GitCoMing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitCoMing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9CE3952965B452008265A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF9CE3972965B452008265A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				FFCC88FC296615AD00AAD594 /* ReactorKit+Extensions.swift */,
 				FF12231E2966E1B800418A1B /* UIAlertController+Extensions.swift */,
 				FF12232329671BFE00418A1B /* Bundle+Extensions.swift */,
+				FF12232D2968AA5800418A1B /* UserDefaults+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				FFF182E52965F99C00E452C4 /* Entity+Extensions.swift in Sources */,
 				FFF182DD2965E6D200E452C4 /* BaseDIContainer.swift in Sources */,
 				FFCC88FB2966131000AAD594 /* CommonWebViewReactor.swift in Sources */,
+				FF12232E2968AA5800418A1B /* UserDefaults+Extensions.swift in Sources */,
 				FFF182EE2966000000E452C4 /* BaseRouter.swift in Sources */,
 				FFCC88FD296615AD00AAD594 /* ReactorKit+Extensions.swift in Sources */,
 				FF9CE3982965B452008265A0 /* SceneDelegate.swift in Sources */,

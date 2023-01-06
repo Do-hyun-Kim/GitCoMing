@@ -73,6 +73,7 @@ public final class CommonWebViewReactor: Reactor {
             
         case let .setAccessToken(token):
             newState.gitAccessToken = token
+            UserDefaults.standard.set(newState.gitAccessToken, forKey: .accessToken)
         }
         
         return newState
