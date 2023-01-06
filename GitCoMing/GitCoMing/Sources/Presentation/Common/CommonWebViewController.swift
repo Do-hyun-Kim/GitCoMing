@@ -11,14 +11,15 @@ import SnapKit
 
 import RxSwift
 import RxCocoa
+import Alamofire
 
 public final class CommonWebViewController: BaseViewController<CommonWebViewReactor> {
     
     //MARK: Property
     private lazy var webView: WKWebView = {
         let webViewConfigure = WKWebViewConfiguration()
-        webViewConfigure.websiteDataStore = WKWebsiteDataStore.default()
-        
+        webViewConfigure.preferences.javaScriptEnabled = true
+        webViewConfigure.preferences.javaScriptCanOpenWindowsAutomatically = true
         return WKWebView(frame: .zero).then {
             $0.uiDelegate = self
             $0.navigationDelegate = self
@@ -28,7 +29,7 @@ public final class CommonWebViewController: BaseViewController<CommonWebViewReac
         }
     }()
     
-    override init(reactor: CommonWebViewReactor? = nil) {
+    override init(reactor: CommonWebViewReactor?) {
         defer { self.reactor = reactor }
         super.init()
     }
@@ -37,17 +38,28 @@ public final class CommonWebViewController: BaseViewController<CommonWebViewReac
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
     public override func loadView() {
         self.view = webView
     }
     
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        configure()
+    }
+    
+    
     public override func configure() {
-        self.webView.addSubview(activityIndicatorView)
+        webView.addSubview(activityIndicatorView)
         
         activityIndicatorView.snp.makeConstraints {
             $0.center.equalToSuperview()
+        }
+        
+        DispatchQueue.main.async {
+            Task {
+                guard let loadUrl = self.reactor?.currentState.gitURL else { return }
+                self.webView.load(URLRequest(url: loadUrl))
+            }
         }
     }
     
@@ -56,16 +68,28 @@ public final class CommonWebViewController: BaseViewController<CommonWebViewReac
         
         Observable.merge(
             webView.rx.didStartLoad.map { _ in true},
-            webView.rx.didFinishLoad.map { _ in false},
-            webView.rx.didFailLoad.map { _ in false}
+            webView.rx.didFinishLoad.map { _ in false}
         )
         .observe(on: MainScheduler.asyncInstance)
         .bind(to: activityIndicatorView.rx.isAnimating)
         .disposed(by: disposeBag)
         
+        reactor.state
+            .map { $0.isWebLoading}
+            .bind(to: activityIndicatorView.rx.isAnimating)
+            .disposed(by: disposeBag)
+    }
+    
+    
+    private func makeGitHubCallBackUrl(_ request: URLRequest) {
+        guard let redirectString = request.url?.absoluteString as? String else { return }
         
-        guard let loadUrl = self.reactor?.currentState.gitURL else { return }
-        self.webView.load(URLRequest(url: loadUrl))
+        
+        if redirectString.starts(with: NetWorkCofigure.redirectUrI) {
+            if let redirectCode = redirectString.split(separator: "=").last.map({ String($0) })  {
+                self.reactor?.action.onNext(.requestAccessToken(redirectCode))
+            }
+        }
     }
 }
 
@@ -73,30 +97,18 @@ public final class CommonWebViewController: BaseViewController<CommonWebViewReac
 
 extension CommonWebViewController: WKUIDelegate ,WKNavigationDelegate {
     
-    public func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
-        
+    public func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo) async {
         GitComingAlert.shared
             .setMessage(message)
             .show()
-            .confirmHandler = {
-                completionHandler(true)
-            }
     }
     
-    public func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
-        guard let redirectUrl = webView.url?.absoluteURL else { return }
-    }
-    
-    
-    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        guard let url = navigationAction.request.url else {
-            return
-        }
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction) async -> WKNavigationActionPolicy {
         
-        if !url.absoluteString.hasPrefix("https://") {
-            decisionHandler(.allow)
-        }
-        decisionHandler(.allow)
+        self.makeGitHubCallBackUrl(navigationAction.request)
+        return .allow
     }
-        
 }
+
+
+

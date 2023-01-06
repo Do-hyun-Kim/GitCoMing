@@ -2,17 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>github.com</key>
+			<dict>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 	<key>GCMRedirectURI</key>
-	<string>GitCoMing://login</string>
+	<string>gitcoming://login</string>
+	<key>GCMClientSecrets</key>
+	<string>e6157d9b1c00f0a649b8cfd7bf1aea10e8fc060a</string>
 	<key>GCMScope</key>
 	<string>read:user,user:email</string>
 	<key>GCMClientId</key>
 	<string>1a75c931ee47226210d9</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 	<key>UIApplicationSceneManifest</key>

@@ -106,11 +106,9 @@ public final class SignInViewController: BaseViewController<SignInViewReactor> {
             .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
             .withUnretained(self)
             .subscribe(onNext: { vc, _ in
-                guard let makeURL = vc.makeGitHubSignInEndPoint(NetWorkEndPoint(networkAPi: .signInCode), query: [
-                    "client_id": NetWorkEndPoint.clientId,
-                    "scope": NetWorkEndPoint.scope,
-                    "redirect_uri": NetWorkEndPoint.redirectUrI,
-                    "state": NetWorkEndPoint.uuid
+                guard let makeURL = vc.makeGitHubSignInEndPoint(NetWorkCofigure(networkAPi: .signInCode), query: [
+                    "client_id": NetWorkCofigure.clientId,
+                    "scope": NetWorkCofigure.scope
                 ]) else { return }
                 
                 let commonWebViewController = CommonWebDIContainer(webLoadURL: makeURL).makeViewController()
@@ -128,7 +126,7 @@ public final class SignInViewController: BaseViewController<SignInViewReactor> {
 
 extension SignInViewController {
     
-    private func makeGitHubSignInEndPoint(_ endPoint: NetWorkEndPoint, query: [String: String]) -> URL? {
+    private func makeGitHubSignInEndPoint(_ endPoint: NetWorkCofigure, query: [String: String]) -> URL? {
         
         var queryItem: [URLQueryItem] = []
         guard var baseComponents = URLComponents(string: endPoint.baseURL + endPoint.path) else {

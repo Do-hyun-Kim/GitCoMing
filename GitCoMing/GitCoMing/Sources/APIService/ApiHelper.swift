@@ -11,7 +11,7 @@ import Alamofire
 import RxSwift
 
 public protocol APiHelper {
-    func requestToString(endPoint: NetWorkEndPoint) -> Observable<String>
+    func requestToAccessToken(endPoint: NetWorkCofigure, parameter: [String: String]) -> Observable<Token>
     
 }
 
@@ -21,24 +21,39 @@ public final class APiManager: APiHelper {
     
     public static let shared: APiManager = APiManager()
     
-    public func requestToString(endPoint: NetWorkEndPoint) -> Observable<String> {
+    
+    public func requestToAccessToken(endPoint: NetWorkCofigure, parameter: [String: String]) -> Observable<Token> {
+        
+        let urlEndPoint = endPoint.baseURL + endPoint.path
+        
         return Observable.create { observer in
-        AF.request(endPoint)
-                .responseString { response in
-                    switch response.result {
-                    case let .success(data):
-                        observer.onNext(data)
+            AF.request(
+                urlEndPoint,
+                method: endPoint.method,
+                parameters: parameter,
+                encoder: URLEncodedFormParameterEncoder.default,
+                headers: endPoint.headers
+            ).responseData { response in
+                switch response.result {
+                case let .success(data):
+                    do {
+                        let tokenEntity = try JSONDecoder().decode(Token.self, from: data)
+                        debugPrint("=========EVENT==========")
+                        observer.onNext(tokenEntity)
                         observer.onCompleted()
-                        return
-                    case let .failure(error):
-                        observer.onError(error)
-                        return
+                        debugPrint("=========COMPLETE========")
+                    } catch {
+                        print(error.localizedDescription)
                     }
-                    
+                case let .failure(error):
+                    debugPrint(error.localizedDescription)
+                    observer.onError(error)
                 }
+                
+            }
+            
             return Disposables.create()
         }
     }
-    
     
 }

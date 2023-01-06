@@ -8,6 +8,10 @@
 import Foundation
 
 
+import RxSwift
+import RxCocoa
+import ReactorKit
+
 
 public final class CommonWebDIContainer: BaseDIContainer {
     
@@ -18,12 +22,16 @@ public final class CommonWebDIContainer: BaseDIContainer {
     
     public let webLoadURL: URL
     
-    init(webLoadURL: URL) {
+    public init(webLoadURL: URL) {
         self.webLoadURL = webLoadURL
     }
     
+    deinit {
+        debugPrint(#function)
+    }
+    
     public func makeReactor() -> CommonWebViewReactor {
-        return CommonWebViewReactor(gitURL: self.webLoadURL)
+        return CommonWebViewReactor(gitURL: self.webLoadURL, webRepository: makeRepository())
     }
     
     public func makeRepository() -> Repository {
@@ -38,11 +46,29 @@ public final class CommonWebDIContainer: BaseDIContainer {
 
 
 public protocol CommonWebRepository {
-    
+    func responseGitAccessToken(parameter: [String: String]) -> Observable<CommonWebViewReactor.Mutation>
 }
 
 final class CommonWebViewRepo: CommonWebRepository {
     
-    init() {}
+    //MARK: Property
+    private let webApiService: APiHelper
+    
+    
+    public init(webApiService: APiHelper = APiManager.shared) {
+        self.webApiService = webApiService
+    }
+    
+    
+    func responseGitAccessToken(parameter: [String: String]) -> Observable<CommonWebViewReactor.Mutation> {
+        let createAccressToken = webApiService.requestToAccessToken(endPoint: .init(networkAPi: .signIn), parameter: parameter).flatMap { (data: Token) -> Observable<CommonWebViewReactor.Mutation> in
+            
+            return .just(.setAccessToken(data))
+        }
+        
+        return createAccressToken
+    }
+    
+    
     
 }

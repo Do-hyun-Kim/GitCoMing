@@ -13,6 +13,25 @@
 			</array>
 		</dict>
 	</array>
+	<key>GCMClientId</key>
+	<string>1a75c931ee47226210d9</string>
+	<key>GCMClientSecrets</key>
+	<string>e6157d9b1c00f0a649b8cfd7bf1aea10e8fc060a</string>
+	<key>GCMRedirectURI</key>
+	<string>gitcoming://login</string>
+	<key>GCMScope</key>
+	<string>read:user,user:email</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>github.com</key>
+			<dict>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

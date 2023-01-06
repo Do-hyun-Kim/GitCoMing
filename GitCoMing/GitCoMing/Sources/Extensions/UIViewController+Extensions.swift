@@ -23,8 +23,12 @@ open class BaseViewController<T: ReactorKit.Reactor>: UIViewController, ReactorK
     public typealias Reactor = T
     
     lazy var activityIndicatorView = UIActivityIndicatorView().then{
-        $0.style = .medium
-        $0.color = .gray
+        if #available(iOS 13.0, *) {
+            $0.style = .medium
+        } else {
+            // Fallback on earlier versions
+            $0.style = .gray
+        }
     }
     
     

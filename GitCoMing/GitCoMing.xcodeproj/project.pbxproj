@@ -10,6 +10,7 @@
 		FF12231F2966E1B800418A1B /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12231E2966E1B800418A1B /* UIAlertController+Extensions.swift */; };
 		FF1223212966F0CE00418A1B /* CommonWebDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1223202966F0CD00418A1B /* CommonWebDIContainer.swift */; };
 		FF12232429671BFE00418A1B /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12232329671BFE00418A1B /* Bundle+Extensions.swift */; };
+		FF1223282968432F00418A1B /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1223272968432F00418A1B /* Token.swift */; };
 		FF9CE3962965B452008265A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CE3952965B452008265A0 /* AppDelegate.swift */; };
 		FF9CE3982965B452008265A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CE3972965B452008265A0 /* SceneDelegate.swift */; };
 		FF9CE39F2965B453008265A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF9CE39E2965B453008265A0 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		FF12231E2966E1B800418A1B /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		FF1223202966F0CD00418A1B /* CommonWebDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebDIContainer.swift; sourceTree = "<group>"; };
 		FF12232329671BFE00418A1B /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		FF1223272968432F00418A1B /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		FF9CE3922965B452008265A0 /* GitCoMing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitCoMing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9CE3952965B452008265A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF9CE3972965B452008265A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		FFF182DA2965E5E200E452C4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				FF1223272968432F00418A1B /* Token.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				FFF182CB2965BE0500E452C4 /* UIFont+Extensions.swift in Sources */,
 				FFF182F129660E8700E452C4 /* CommonWebViewController.swift in Sources */,
 				FFF182CF2965C8C000E452C4 /* UIViewController+Extensions.swift in Sources */,
+				FF1223282968432F00418A1B /* Token.swift in Sources */,
 				FFCC89042966B6AE00AAD594 /* SignInViewController.swift in Sources */,
 				FFF182C92965BCDB00E452C4 /* SplashViewController.swift in Sources */,
 				FF12231F2966E1B800418A1B /* UIAlertController+Extensions.swift in Sources */,
@@ -647,6 +651,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -674,6 +679,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
