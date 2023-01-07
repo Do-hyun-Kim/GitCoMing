@@ -23,7 +23,7 @@ public extension UserDefaults {
     
     
     func set(_ value: Any?, forKey: UserDefaultsKeys) {
-        set(value, forKey: forKey)
+        set(value, forKey: forKey.rawValue)
     }
     
     func remove(forKey: UserDefaultsKeys) {

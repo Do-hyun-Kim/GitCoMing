@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  GitCoMing
+
+  Created by Kim dohyun on 2023/01/07.
+  
+*/
+
+"main.tabItem.home" = "home";
+"main.tabItem.profile" = "profile";

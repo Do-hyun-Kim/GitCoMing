@@ -16,9 +16,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = .init(windowScene: scene)
         
-        willShowSplashController()
+        if UserDefaults.standard.string(forKey: .accessToken).isEmpty {
+            willShowSplashController()
+        } else {
+            willShowMainController()
+        }
     }
+}
 
+
+extension SceneDelegate {
     
     private func willShowSplashController() {
         let splashController = SplashViewController(reactor: SplashViewReactor())
@@ -26,18 +33,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = splashController
         window?.makeKeyAndVisible()
     }
+    
+    private func willShowMainController() {
+        window?.rootViewController = MainViewController()
+        window?.makeKeyAndVisible()
+    }
+    
 }
 
 
-
+/// SplashViewDelegate ➡️ LoginViewController RootViewController 전환
 extension SceneDelegate: CoordinatorDelegate {
-    func didShowMainController() {
+    func didShowLoginController() {
         let signInController = SignInDIContainer().makeViewController()
         
         window?.rootViewController = signInController
         window?.makeKeyAndVisible()
     }
-    
-    
-    
 }

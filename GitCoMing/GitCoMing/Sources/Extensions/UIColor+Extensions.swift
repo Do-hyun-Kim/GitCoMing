@@ -11,16 +11,19 @@ import UIKit
 public extension UIColor {
     
     /// GitCoMing - DarkGray Color
-    class var darkGray: UIColor? { return UIColor(named: "darkGray") }
+    class var gitDarkGray: UIColor? { return UIColor(named: "gitDarkGray") }
     
     /// GitCoMing - Purple Color
-    class var purple: UIColor? { return UIColor(named: "purple") }
+    class var gitPurple: UIColor? { return UIColor(named: "gitPurple") }
     
     /// GitCoMing - White Color
-    class var white: UIColor? { return UIColor(named: "white")}
+    class var gitWhite: UIColor? { return UIColor(named: "gitWhite")}
     
     /// GitCoMing - Blue Color
-    class var blue: UIColor? { return UIColor(named: "blue")}
+    class var gitBlue: UIColor? { return UIColor(named: "gitBlue")}
+    
+    /// GitCoMing - Light Color
+    class var gitLightGray: UIColor? { return UIColor(named: "gitLightGray")}
     
 }
 

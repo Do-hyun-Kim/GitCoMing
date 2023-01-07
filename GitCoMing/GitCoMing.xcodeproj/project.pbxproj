@@ -12,6 +12,14 @@
 		FF12232429671BFE00418A1B /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12232329671BFE00418A1B /* Bundle+Extensions.swift */; };
 		FF1223282968432F00418A1B /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1223272968432F00418A1B /* Token.swift */; };
 		FF12232E2968AA5800418A1B /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12232D2968AA5800418A1B /* UserDefaults+Extensions.swift */; };
+		FF775D542968AFD900DFB500 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775D532968AFD900DFB500 /* SearchViewController.swift */; };
+		FF775D572968B16900DFB500 /* GCMNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775D562968B16900DFB500 /* GCMNavigationViewController.swift */; };
+		FF775D592968BE5200DFB500 /* SearchViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775D582968BE5200DFB500 /* SearchViewReactor.swift */; };
+		FF775D5B2968BF1D00DFB500 /* SearchDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775D5A2968BF1D00DFB500 /* SearchDIContainer.swift */; };
+		FF775D5D2968CF6D00DFB500 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775D5C2968CF6D00DFB500 /* Notification+Extension.swift */; };
+		FF775D6029699E6100DFB500 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775D5F29699E6100DFB500 /* MainViewController.swift */; };
+		FF775D692969A37300DFB500 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF775D6B2969A37300DFB500 /* Localizable.strings */; };
+		FF775D6E2969A40500DFB500 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775D6D2969A40500DFB500 /* String+Extensions.swift */; };
 		FF9CE3962965B452008265A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CE3952965B452008265A0 /* AppDelegate.swift */; };
 		FF9CE3982965B452008265A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CE3972965B452008265A0 /* SceneDelegate.swift */; };
 		FF9CE39F2965B453008265A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF9CE39E2965B453008265A0 /* Assets.xcassets */; };
@@ -66,6 +74,15 @@
 		FF12232329671BFE00418A1B /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		FF1223272968432F00418A1B /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		FF12232D2968AA5800418A1B /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		FF775D532968AFD900DFB500 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FF775D562968B16900DFB500 /* GCMNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCMNavigationViewController.swift; sourceTree = "<group>"; };
+		FF775D582968BE5200DFB500 /* SearchViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewReactor.swift; sourceTree = "<group>"; };
+		FF775D5A2968BF1D00DFB500 /* SearchDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDIContainer.swift; sourceTree = "<group>"; };
+		FF775D5C2968CF6D00DFB500 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		FF775D5F29699E6100DFB500 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FF775D6A2969A37300DFB500 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FF775D6C2969A39F00DFB500 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FF775D6D2969A40500DFB500 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		FF9CE3922965B452008265A0 /* GitCoMing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitCoMing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9CE3952965B452008265A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF9CE3972965B452008265A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +143,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF775D512968AFBC00DFB500 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FF775D522968AFC900DFB500 /* Reactor */,
+				FF775D532968AFD900DFB500 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		FF775D522968AFC900DFB500 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				FF775D582968BE5200DFB500 /* SearchViewReactor.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
+		FF775D552968B14700DFB500 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FF775D562968B16900DFB500 /* GCMNavigationViewController.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FF775D5E29699E4800DFB500 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FF775D5F29699E6100DFB500 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FF775D612969A2DF00DFB500 /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				FF775D6B2969A37300DFB500 /* Localizable.strings */,
+			);
+			path = Localize;
+			sourceTree = "<group>";
+		};
 		FF9CE3892965B452008265A0 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +249,7 @@
 		FFF182BF2965B9D000E452C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FF775D612969A2DF00DFB500 /* Localize */,
 				FF9CE39E2965B453008265A0 /* Assets.xcassets */,
 				FF9CE3A32965B453008265A0 /* Info.plist */,
 			);
@@ -200,6 +259,7 @@
 		FFF182C02965B9DB00E452C4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FF775D552968B14700DFB500 /* Components */,
 				FFF182E92965FF6400E452C4 /* APIService */,
 				FFF182C32965BA2300E452C4 /* Extensions */,
 				FFF182DA2965E5E200E452C4 /* Domain */,
@@ -222,6 +282,8 @@
 		FFF182C22965B9FF00E452C4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FF775D5E29699E4800DFB500 /* Main */,
+				FF775D512968AFBC00DFB500 /* Search */,
 				FFF182EF29660E5A00E452C4 /* Common */,
 				FFF182D62965E4E900E452C4 /* SignIn */,
 				FFF182C62965BCBB00E452C4 /* Splash */,
@@ -240,6 +302,8 @@
 				FF12231E2966E1B800418A1B /* UIAlertController+Extensions.swift */,
 				FF12232329671BFE00418A1B /* Bundle+Extensions.swift */,
 				FF12232D2968AA5800418A1B /* UserDefaults+Extensions.swift */,
+				FF775D5C2968CF6D00DFB500 /* Notification+Extension.swift */,
+				FF775D6D2969A40500DFB500 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -276,6 +340,7 @@
 				FFF182DB2965E6BC00E452C4 /* Base */,
 				FFCC890B2966C2B300AAD594 /* SignInDIContainer.swift */,
 				FF1223202966F0CD00418A1B /* CommonWebDIContainer.swift */,
+				FF775D5A2968BF1D00DFB500 /* SearchDIContainer.swift */,
 			);
 			path = Dependency;
 			sourceTree = "<group>";
@@ -418,6 +483,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = FF9CE3892965B452008265A0;
 			packageReferences = (
@@ -445,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF9CE39F2965B453008265A0 /* Assets.xcassets in Resources */,
+				FF775D692969A37300DFB500 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,8 +540,10 @@
 				FFF182D32965DC7500E452C4 /* SplashViewReactor.swift in Sources */,
 				FF9CE3962965B452008265A0 /* AppDelegate.swift in Sources */,
 				FFF182CD2965C0B800E452C4 /* UIColor+Extensions.swift in Sources */,
+				FF775D5B2968BF1D00DFB500 /* SearchDIContainer.swift in Sources */,
 				FFCC890C2966C2B300AAD594 /* SignInDIContainer.swift in Sources */,
 				FFF182E52965F99C00E452C4 /* Entity+Extensions.swift in Sources */,
+				FF775D6029699E6100DFB500 /* MainViewController.swift in Sources */,
 				FFF182DD2965E6D200E452C4 /* BaseDIContainer.swift in Sources */,
 				FFCC88FB2966131000AAD594 /* CommonWebViewReactor.swift in Sources */,
 				FF12232E2968AA5800418A1B /* UserDefaults+Extensions.swift in Sources */,
@@ -482,15 +551,20 @@
 				FFCC88FD296615AD00AAD594 /* ReactorKit+Extensions.swift in Sources */,
 				FF9CE3982965B452008265A0 /* SceneDelegate.swift in Sources */,
 				FF12232429671BFE00418A1B /* Bundle+Extensions.swift in Sources */,
+				FF775D542968AFD900DFB500 /* SearchViewController.swift in Sources */,
+				FF775D572968B16900DFB500 /* GCMNavigationViewController.swift in Sources */,
 				FFF182CB2965BE0500E452C4 /* UIFont+Extensions.swift in Sources */,
+				FF775D5D2968CF6D00DFB500 /* Notification+Extension.swift in Sources */,
 				FFF182F129660E8700E452C4 /* CommonWebViewController.swift in Sources */,
 				FFF182CF2965C8C000E452C4 /* UIViewController+Extensions.swift in Sources */,
 				FF1223282968432F00418A1B /* Token.swift in Sources */,
 				FFCC89042966B6AE00AAD594 /* SignInViewController.swift in Sources */,
 				FFF182C92965BCDB00E452C4 /* SplashViewController.swift in Sources */,
+				FF775D6E2969A40500DFB500 /* String+Extensions.swift in Sources */,
 				FF12231F2966E1B800418A1B /* UIAlertController+Extensions.swift in Sources */,
 				FF1223212966F0CE00418A1B /* CommonWebDIContainer.swift in Sources */,
 				FFCC89022966B66400AAD594 /* SignInViewReactor.swift in Sources */,
+				FF775D592968BE5200DFB500 /* SearchViewReactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,11 +600,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		FF775D6B2969A37300DFB500 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF775D6A2969A37300DFB500 /* en */,
+				FF775D6C2969A39F00DFB500 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		FF9CE3BA2965B454008265A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -591,6 +678,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

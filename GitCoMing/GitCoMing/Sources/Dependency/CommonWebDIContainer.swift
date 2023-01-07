@@ -61,7 +61,7 @@ final class CommonWebViewRepo: CommonWebRepository {
     
     
     func responseGitAccessToken(parameter: [String: String]) -> Observable<CommonWebViewReactor.Mutation> {
-        let createAccressToken = webApiService.requestToAccessToken(endPoint: .init(networkAPi: .signIn), parameter: parameter).flatMap { (data: Token) -> Observable<CommonWebViewReactor.Mutation> in
+        let createAccressToken = webApiService.requestOutBound(endPoint: .init(networkAPi: .signIn), parameter: parameter).flatMap { (data: Token) -> Observable<CommonWebViewReactor.Mutation> in
             
             return .just(.setAccessToken(data))
         }

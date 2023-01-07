@@ -13,15 +13,15 @@ import ReactorKit
 import RxSwift
 import RxCocoa
 
-protocol CoordinatorDelegate: AnyObject {
-    func didShowMainController()
+public protocol CoordinatorDelegate: AnyObject {
+    func didShowLoginController()
 }
 
 
 final class SplashViewController: BaseViewController<SplashViewReactor> {
     
     //MARK: Property
-    weak var delegate: CoordinatorDelegate?
+    public weak var delegate: CoordinatorDelegate?
     
     
     private let mainLogoImageView = UIImageView().then {
@@ -32,7 +32,7 @@ final class SplashViewController: BaseViewController<SplashViewReactor> {
     
     private let descriptionLabel = UILabel().then {
         $0.font = .bold(size: 24)
-        $0.textColor = .darkGray
+        $0.textColor = .gitDarkGray
         $0.text = "GitCoMing"
         $0.sizeToFit()
     }
@@ -87,7 +87,7 @@ final class SplashViewController: BaseViewController<SplashViewReactor> {
             .observe(on: MainScheduler.instance)
             .withUnretained(self)
             .bind { vc, _ in
-                vc.delegate?.didShowMainController()
+                vc.delegate?.didShowLoginController()
             }.disposed(by: disposeBag)
     }
     

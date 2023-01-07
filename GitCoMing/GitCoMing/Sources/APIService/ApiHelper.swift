@@ -11,7 +11,7 @@ import Alamofire
 import RxSwift
 
 public protocol APiHelper {
-    func requestToAccessToken(endPoint: NetWorkCofigure, parameter: [String: String]) -> Observable<Token>
+    func requestOutBound<T>(endPoint: NetWorkCofigure, parameter: [String: String]) -> Observable<T> where T: Decodable
     
 }
 
@@ -22,7 +22,7 @@ public final class APiManager: APiHelper {
     public static let shared: APiManager = APiManager()
     
     
-    public func requestToAccessToken(endPoint: NetWorkCofigure, parameter: [String: String]) -> Observable<Token> {
+    public func requestOutBound<T>(endPoint: NetWorkCofigure, parameter: [String: String]) -> Observable<T>  where T: Decodable {
         
         let urlEndPoint = endPoint.baseURL + endPoint.path
         
@@ -37,9 +37,10 @@ public final class APiManager: APiHelper {
                 switch response.result {
                 case let .success(data):
                     do {
-                        let tokenEntity = try JSONDecoder().decode(Token.self, from: data)
+                        let entity = try JSONDecoder().decode(T.self, from: data)
                         debugPrint("=========EVENT==========")
-                        observer.onNext(tokenEntity)
+                        debugPrint("=======\(entity)==========")
+                        observer.onNext(entity)
                         observer.onCompleted()
                         debugPrint("=========COMPLETE========")
                     } catch {

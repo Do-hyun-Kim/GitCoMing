@@ -24,7 +24,7 @@ public final class SignInViewController: BaseViewController<SignInViewReactor> {
     
     private let signInAppDescriptionLabel = UILabel().then {
         $0.font = .bold(size: 24)
-        $0.textColor = .darkGray
+        $0.textColor = .gitDarkGray
         $0.text = "GitCoMing"
         $0.sizeToFit()
     }
@@ -33,8 +33,8 @@ public final class SignInViewController: BaseViewController<SignInViewReactor> {
     private let signInButton = UIButton(type: .custom).then {
         $0.layer.cornerRadius = 5
         $0.setTitle("Sign in with GitHub", for: .normal)
-        $0.setTitleColor(UIColor.white, for: .normal)
-        $0.backgroundColor = UIColor.darkGray
+        $0.setTitleColor(UIColor.gitWhite, for: .normal)
+        $0.backgroundColor = UIColor.gitDarkGray
         $0.semanticContentAttribute = .forceLeftToRight
     }
     
@@ -57,7 +57,7 @@ public final class SignInViewController: BaseViewController<SignInViewReactor> {
     
     //MARK: Configure
     public override func configure() {
-        _ = [signInLogoImageView,signInAppDescriptionLabel ,signInButton, activityIndicatorView].map {
+        _ = [signInLogoImageView, signInAppDescriptionLabel ,signInButton, activityIndicatorView].map {
             self.view.addSubview($0)
         }
         
@@ -103,7 +103,7 @@ public final class SignInViewController: BaseViewController<SignInViewReactor> {
         
         signInButton.rx
             .tap
-            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .throttle(.milliseconds(300), scheduler: MainScheduler.asyncInstance)
             .withUnretained(self)
             .subscribe(onNext: { vc, _ in
                 guard let makeURL = vc.makeGitHubSignInEndPoint(NetWorkCofigure(networkAPi: .signInCode), query: [
@@ -114,8 +114,6 @@ public final class SignInViewController: BaseViewController<SignInViewReactor> {
                 let commonWebViewController = CommonWebDIContainer(webLoadURL: makeURL).makeViewController()
                 commonWebViewController.modalPresentationStyle = .fullScreen
                 vc.present(commonWebViewController, animated: true)
-                
-                
             }).disposed(by: disposeBag)
         
     }

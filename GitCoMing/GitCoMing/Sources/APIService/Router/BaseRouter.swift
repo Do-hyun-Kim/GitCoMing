@@ -14,6 +14,7 @@ import Foundation
 public enum NetWorkAPi {
     case signInCode
     case signIn
+    case searchRepo
 }
 
 //MARK: EndPoint Initialization
@@ -66,11 +67,18 @@ extension NetWorkCofigure: URLRequestConvertible {
     
     
     var baseURL: String {
-        return "https://github.com"
+        switch networkAPi {
+        case .searchRepo:
+            return "https://api.github.com"
+        default:
+            return "https://github.com"
+        }
     }
     
     var path: String {
         switch networkAPi {
+        case .searchRepo:
+            return "/search/repositories"
         case .signIn:
             return "/login/oauth/access_token"
         case .signInCode:
@@ -89,6 +97,10 @@ extension NetWorkCofigure: URLRequestConvertible {
     
     var headers: HTTPHeaders {
         switch networkAPi {
+        case .searchRepo:
+            return [
+                "accept": "application/vnd.github.v3+json"
+            ]
         default:
             return [
                 "Accept":"application/json"
