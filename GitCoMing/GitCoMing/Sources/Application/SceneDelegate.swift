@@ -9,7 +9,9 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    //MARK: Property
     var window: UIWindow?
+    private var gitNavigationController: GCMNavigationViewController!
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -19,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if UserDefaults.standard.string(forKey: .accessToken).isEmpty {
             willShowSplashController()
         } else {
-            willShowMainController()
+            willShowPostController()
         }
     }
 }
@@ -34,8 +36,15 @@ extension SceneDelegate {
         window?.makeKeyAndVisible()
     }
     
-    private func willShowMainController() {
-        window?.rootViewController = MainViewController()
+    private func willShowPostController() {
+        
+        let postViewController = PostDIContainer().makeViewController()
+        
+        gitNavigationController = GCMNavigationViewController(
+            rootViewController: postViewController
+        )
+        
+        window?.rootViewController = gitNavigationController
         window?.makeKeyAndVisible()
     }
     

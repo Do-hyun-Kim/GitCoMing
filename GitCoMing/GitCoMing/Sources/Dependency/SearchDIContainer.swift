@@ -2,12 +2,10 @@
 //  SearchDIContainer.swift
 //  GitCoMing
 //
-//  Created by Kim dohyun on 2023/01/07.
+//  Created by Kim dohyun on 2023/01/08.
 //
 
 import Foundation
-
-
 
 
 public final class SearchDIContainer: BaseDIContainer {
@@ -19,7 +17,7 @@ public final class SearchDIContainer: BaseDIContainer {
     
     
     public func makeReactor() -> SearchViewReactor {
-        return SearchViewReactor()
+        return SearchViewReactor(searchRepository: makeRepository())
     }
     
     public func makeRepository() -> Repository {
@@ -30,18 +28,26 @@ public final class SearchDIContainer: BaseDIContainer {
         return SearchViewController(reactor: makeReactor())
     }
     
-    
 }
 
 
-
 public protocol SearchRepository {
-    
-    
+    func responseSearchRecentlyKeyWordSectionItem() -> SearchSection
 }
 
 
 final class SearchViewRepo: SearchRepository {
     
     
+    public init() {}
+    
+    func responseSearchRecentlyKeyWordSectionItem() -> SearchSection {
+        var recentlyKeywordItems: [SearchSectionItem] = []
+        var recentlyKeywordEntity = UserDefaults.standard.stringArray(forKey: .recentlyKeywords)
+        for i in 0 ..< recentlyKeywordEntity.count {
+            recentlyKeywordItems.append(.recentlyKeywordItem(SearchRecentlyKeywordCellReactor(keywordItems: recentlyKeywordEntity[i], indexPath: i)))
+        }
+        
+        return SearchSection.search(recentlyKeywordItems)
+    }
 }

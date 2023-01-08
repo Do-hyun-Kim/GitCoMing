@@ -11,23 +11,23 @@ import Foundation
 public struct Base<T>: Decodable where T: Decodable {
     
     /// 응답 결과
-    public let item: T?
+    public let items: T?
     
     
     enum CodingKeys: String, CodingKey {
-        case item
+        case items
     }
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.item = try container.decodeIfPresent(T.self, forKey: .item)
+        self.items = try container.decodeIfPresent(T.self, forKey: .items)
     }
 }
 
 
 public extension Base {
-  init(item: T?) {
-    self.item = item
-  }
+    init(items: T?) {
+        self.items = items
+    }
 }

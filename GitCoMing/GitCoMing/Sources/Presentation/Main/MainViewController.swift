@@ -36,7 +36,7 @@ extension MainViewController {
     private func setViewControllers() {
         
         /// SearchViewController 화면 📺
-        let searchViewController = SearchDIContainer().makeViewController()
+        let searchViewController = PostDIContainer().makeViewController()
         
         gitNavigationController = GCMNavigationViewController(
             rootViewController: searchViewController

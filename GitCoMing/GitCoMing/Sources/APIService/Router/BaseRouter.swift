@@ -14,7 +14,7 @@ import Foundation
 public enum NetWorkAPi {
     case signInCode
     case signIn
-    case searchRepo
+    case searchRepo(String?)
 }
 
 //MARK: EndPoint Initialization
@@ -59,7 +59,7 @@ protocol NetWorkConfigure: URLRequestConvertible {
     var path: String { get }
     var method: HTTPMethod { get }
     var headers: HTTPHeaders { get }
-    var parameter: Parameters? { get }
+    var parameter: Parameters { get }
     var encoding: ParameterEncoding { get }
 }
 
@@ -99,17 +99,23 @@ extension NetWorkCofigure: URLRequestConvertible {
         switch networkAPi {
         case .searchRepo:
             return [
-                "accept": "application/vnd.github.v3+json"
+                "accept": "application/vnd.github+json",
+                "Authorization": "Bearer \(UserDefaults.standard.string(forKey: .accessToken))"
             ]
         default:
             return [
-                "Accept":"application/json"
+                "Accept":"application/json",
             ]
         }
     }
     
-    var parameter: Parameters? {
+    var parameter: Parameters {
         switch networkAPi {
+        case let .searchRepo(keyword):
+            return [
+                "q": keyword ?? "",
+                "page": "10"
+            ]
         default:
             return [:]
         }

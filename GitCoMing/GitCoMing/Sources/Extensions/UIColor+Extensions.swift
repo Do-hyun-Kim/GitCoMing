@@ -25,6 +25,14 @@ public extension UIColor {
     /// GitCoMing - Light Color
     class var gitLightGray: UIColor? { return UIColor(named: "gitLightGray")}
     
+    /// GitCoMing - Gray Color
+    class var gitGray: UIColor? { return UIColor(named: "gitGray") }
+    
+    /// GitCoMing - SilverGray Color
+    class var gitSilverGray: UIColor? { return UIColor(named: "gitSilverGray")}
+    
+    /// GitCoMing - ClearGray Color
+    class var gitClearGray: UIColor? { return UIColor(named: "gitClearGray") }
 }
 
 

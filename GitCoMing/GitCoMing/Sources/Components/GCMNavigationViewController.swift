@@ -29,8 +29,27 @@ public final class GCMNavigationViewController: UINavigationController {
     
     //MARK: Configure
     private func configure() {
-        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 
+}
+
+
+extension UINavigationController {
+    public func pushViewController(viewController: UIViewController, animated: Bool, completion: @escaping () -> Void) {
+            CATransaction.setCompletionBlock(completion)
+            CATransaction.begin()
+            self.pushViewController(viewController, animated: animated)
+            CATransaction.commit()
+    }
+    
+    
+    public func popViewController(animated: Bool = true, completion: @escaping () -> Void) {
+        CATransaction.setCompletionBlock(completion)
+        CATransaction.begin()
+        self.popViewController(animated: animated)
+        CATransaction.commit()
+    }
 }

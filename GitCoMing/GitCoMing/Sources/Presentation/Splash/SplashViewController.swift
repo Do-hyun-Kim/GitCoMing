@@ -26,14 +26,15 @@ final class SplashViewController: BaseViewController<SplashViewReactor> {
     
     private let mainLogoImageView = UIImageView().then {
         $0.image = UIImage(named: "splashLogo")
-        $0.contentMode = .scaleAspectFill
+        $0.contentMode = .scaleAspectFit
     }
     
     
     private let descriptionLabel = UILabel().then {
-        $0.font = .bold(size: 24)
-        $0.textColor = .gitDarkGray
+        $0.font = .bold(size: 36)
+        $0.textColor = .black
         $0.text = "GitCoMing"
+        $0.textAlignment = .center
         $0.sizeToFit()
     }
     
@@ -50,6 +51,7 @@ final class SplashViewController: BaseViewController<SplashViewReactor> {
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
         configure()
     }
     
@@ -62,13 +64,16 @@ final class SplashViewController: BaseViewController<SplashViewReactor> {
         }
         
         mainLogoImageView.snp.makeConstraints {
-            $0.width.height.equalTo(100)
-            $0.center.equalToSuperview()
+            $0.width.height.equalTo(150)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(138)
+            $0.centerX.equalToSuperview()
         }
 
         descriptionLabel.snp.makeConstraints {
-            $0.centerX.equalTo(mainLogoImageView)
-            $0.top.equalTo(mainLogoImageView.snp.bottom).offset(10)
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(mainLogoImageView.snp.bottom).offset(40)
+            $0.width.equalTo(180)
+            $0.height.equalTo(44)
         }
         
     }

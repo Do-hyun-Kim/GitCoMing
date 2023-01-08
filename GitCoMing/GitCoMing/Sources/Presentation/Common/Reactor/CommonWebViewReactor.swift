@@ -23,7 +23,7 @@ public final class CommonWebViewReactor: Reactor {
     public struct State {
         var isWebLoading: Bool
         var gitURL: URL
-        @Pulse var gitAccessToken: Token?
+        var gitAccessToken: Token?
     }
     
     public enum Mutation {
