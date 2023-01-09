@@ -20,7 +20,7 @@ public final class SearchViewController: BaseViewController<SearchViewReactor> {
     //MARK: Property
     
     private let repositorySearchBar = UISearchBar().then {
-        let attributed = NSAttributedString(string: "찾는 레포지토리를 키워드로 검색해보세요.".localized(), attributes: [
+        let attributed = NSAttributedString(string: "찾는 레포지토리 및 사용자를 키워드로 검색해보세요.".localized(), attributes: [
             NSAttributedString.Key.font: UIFont.regular(size: 14),
             NSAttributedString.Key.foregroundColor: UIColor.gitSilverGray!
         ])
