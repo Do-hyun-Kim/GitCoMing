@@ -48,7 +48,7 @@ final class SearchRecentlyKeywordCell: BaseCollectionViewCell<SearchRecentlyKeyw
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    //MARK: Configure
     override func configure() {
         self.contentView.addSubview(keywordContainerView)
         

@@ -38,8 +38,9 @@ public final class PostDIContainer: BaseDIContainer {
 
 
 public protocol PostRepository {
-    func responseSearchRepository(_ keyword: String) -> Observable<PostViewReactor.Mutation>
-    
+    func responseSearchRepository(_ keyword: String, pages: String) -> Observable<PostViewReactor.Mutation>
+    func responsePostRepositorySectionitem(item: [Search]) -> PostSection
+    func requestActiveToRepositoryStar(owner: String, repository: String) -> Observable<PostRepositoryCellReactor.Mutation>
 }
 
 
@@ -47,16 +48,16 @@ final class PostViewRepo: PostRepository {
     
     
     //MARK: Property
-    private let searchApiService: APiHelper
+    private let postApiService: APiHelper
     
-    init(searchApiService: APiHelper = APiManager.shared) {
-        self.searchApiService = searchApiService
+    init(postApiService: APiHelper = APiManager.shared) {
+        self.postApiService = postApiService
     }
     
     
-    func responseSearchRepository(_ keyword: String) -> Observable<PostViewReactor.Mutation> {
+    func responseSearchRepository(_ keyword: String, pages: String) -> Observable<PostViewReactor.Mutation> {
         
-        let createSearchRepository = searchApiService.requestInBound(endPoint: .init(networkAPi: .searchRepo(keyword))).flatMap { (data: [Search]) -> Observable<PostViewReactor.Mutation> in
+        let createSearchRepository = postApiService.requestInBound(endPoint: .init(networkAPi: .searchRepo(keyword, pages))).flatMap { (data: [Search]) -> Observable<PostViewReactor.Mutation> in
             print("test Repository ")
             return .just(.requestSearchRepository(data))
         }
@@ -64,4 +65,22 @@ final class PostViewRepo: PostRepository {
         return createSearchRepository
     }
     
+    
+    func responsePostRepositorySectionitem(item: [Search]) -> PostSection {
+        var repositorySectionItem: [PostSectionItem] = []
+        
+        for i in 0 ..< item.count {
+            repositorySectionItem.append(.repositoryItem(PostRepositoryCellReactor(repositoryItems: item[i], postCellRepository: self, indexPath: i)))
+        }
+        
+        return PostSection.repositoryPost(repositorySectionItem)
+    }
+    
+    func requestActiveToRepositoryStar(owner: String, repository: String) -> Observable<PostRepositoryCellReactor.Mutation> {
+        let createActiveStar = postApiService.requestToNonKeyBound(endPoint: .init(networkAPi: .activeStar(owner, repository))).flatMap { (data: Star) -> Observable<PostRepositoryCellReactor.Mutation> in
+            return .just(.updateAcitveToStar(data))
+        }
+        
+        return createActiveStar
+    }
 }

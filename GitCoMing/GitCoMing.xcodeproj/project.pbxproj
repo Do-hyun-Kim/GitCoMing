@@ -34,6 +34,19 @@
 		FF775D8E296B071600DFB500 /* SearchRecentlyKeywordCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775D8D296B071600DFB500 /* SearchRecentlyKeywordCellReactor.swift */; };
 		FF775D94296B211400DFB500 /* UICollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775D93296B211400DFB500 /* UICollectionViewCell+Extensions.swift */; };
 		FF775D9E296B337C00DFB500 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF775D9D296B337C00DFB500 /* Launch Screen.storyboard */; };
+		FF775DA1296B4C8E00DFB500 /* PostViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775DA0296B4C8E00DFB500 /* PostViewSection.swift */; };
+		FF775DA6296B4F1200DFB500 /* PostRepositoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775DA5296B4F1200DFB500 /* PostRepositoryListCell.swift */; };
+		FF775DA8296B4F4800DFB500 /* PostRepositoryCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775DA7296B4F4800DFB500 /* PostRepositoryCellReactor.swift */; };
+		FF775DAA296B626B00DFB500 /* RepositoryEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775DA9296B626B00DFB500 /* RepositoryEmptyView.swift */; };
+		FF775DAC296B683A00DFB500 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775DAB296B683A00DFB500 /* Star.swift */; };
+		FF775DAF296B954C00DFB500 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775DAE296B954C00DFB500 /* ProfileViewController.swift */; };
+		FF775DB1296B957800DFB500 /* ProfileDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775DB0296B957800DFB500 /* ProfileDIContainer.swift */; };
+		FF775DB4296B966F00DFB500 /* ProfileViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775DB3296B966F00DFB500 /* ProfileViewReactor.swift */; };
+		FF775DB6296B9E4E00DFB500 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775DB5296B9E4E00DFB500 /* Profile.swift */; };
+		FF775DB8296BC73300DFB500 /* Organizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775DB7296BC73300DFB500 /* Organizations.swift */; };
+		FF775DBB296BDA1F00DFB500 /* ProfileViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775DBA296BDA1F00DFB500 /* ProfileViewSection.swift */; };
+		FF775DBE296BDC5600DFB500 /* ProfileOrganizationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775DBD296BDC5600DFB500 /* ProfileOrganizationsCell.swift */; };
+		FF775DC1296BDCC200DFB500 /* ProfileOrganizationsCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF775DC0296BDCC200DFB500 /* ProfileOrganizationsCellReactor.swift */; };
 		FF9CE3962965B452008265A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CE3952965B452008265A0 /* AppDelegate.swift */; };
 		FF9CE3982965B452008265A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9CE3972965B452008265A0 /* SceneDelegate.swift */; };
 		FF9CE39F2965B453008265A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF9CE39E2965B453008265A0 /* Assets.xcassets */; };
@@ -110,6 +123,19 @@
 		FF775D8D296B071600DFB500 /* SearchRecentlyKeywordCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecentlyKeywordCellReactor.swift; sourceTree = "<group>"; };
 		FF775D93296B211400DFB500 /* UICollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		FF775D9D296B337C00DFB500 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		FF775DA0296B4C8E00DFB500 /* PostViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewSection.swift; sourceTree = "<group>"; };
+		FF775DA5296B4F1200DFB500 /* PostRepositoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryListCell.swift; sourceTree = "<group>"; };
+		FF775DA7296B4F4800DFB500 /* PostRepositoryCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryCellReactor.swift; sourceTree = "<group>"; };
+		FF775DA9296B626B00DFB500 /* RepositoryEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryEmptyView.swift; sourceTree = "<group>"; };
+		FF775DAB296B683A00DFB500 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		FF775DAE296B954C00DFB500 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FF775DB0296B957800DFB500 /* ProfileDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDIContainer.swift; sourceTree = "<group>"; };
+		FF775DB3296B966F00DFB500 /* ProfileViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewReactor.swift; sourceTree = "<group>"; };
+		FF775DB5296B9E4E00DFB500 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		FF775DB7296BC73300DFB500 /* Organizations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organizations.swift; sourceTree = "<group>"; };
+		FF775DBA296BDA1F00DFB500 /* ProfileViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewSection.swift; sourceTree = "<group>"; };
+		FF775DBD296BDC5600DFB500 /* ProfileOrganizationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrganizationsCell.swift; sourceTree = "<group>"; };
+		FF775DC0296BDCC200DFB500 /* ProfileOrganizationsCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOrganizationsCellReactor.swift; sourceTree = "<group>"; };
 		FF9CE3922965B452008265A0 /* GitCoMing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitCoMing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9CE3952965B452008265A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF9CE3972965B452008265A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +200,7 @@
 		FF775D512968AFBC00DFB500 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				FF775D9F296B4C6900DFB500 /* DataSources */,
 				FF775D74296A02E200DFB500 /* Components */,
 				FF775D522968AFC900DFB500 /* Reactor */,
 				FF775D532968AFD900DFB500 /* PostViewController.swift */,
@@ -184,6 +211,7 @@
 		FF775D522968AFC900DFB500 /* Reactor */ = {
 			isa = PBXGroup;
 			children = (
+				FF775DA2296B4E1200DFB500 /* CellReactor */,
 				FF775D582968BE5200DFB500 /* PostViewReactor.swift */,
 			);
 			path = Reactor;
@@ -225,7 +253,9 @@
 		FF775D74296A02E200DFB500 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FF775DA4296B4E7B00DFB500 /* Cell */,
 				FF775D75296A030B00DFB500 /* SearchView.swift */,
+				FF775DA9296B626B00DFB500 /* RepositoryEmptyView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -233,7 +263,7 @@
 		FF775D7C296AF9BB00DFB500 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				FF775D89296B044000DFB500 /* Component */,
+				FF775D89296B044000DFB500 /* Components */,
 				FF775D84296AFD5700DFB500 /* DataSources */,
 				FF775D81296AFA6500DFB500 /* Reactor */,
 				FF775D7D296AF9D300DFB500 /* SearchViewController.swift */,
@@ -258,12 +288,12 @@
 			path = DataSources;
 			sourceTree = "<group>";
 		};
-		FF775D89296B044000DFB500 /* Component */ = {
+		FF775D89296B044000DFB500 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				FF775D8F296B20AE00DFB500 /* Cell */,
 			);
-			path = Component;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		FF775D8C296B06FB00DFB500 /* CellReactor */ = {
@@ -280,6 +310,74 @@
 				FF775D8A296B046600DFB500 /* SearchRecentlyKeywordCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		FF775D9F296B4C6900DFB500 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				FF775DA0296B4C8E00DFB500 /* PostViewSection.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		FF775DA2296B4E1200DFB500 /* CellReactor */ = {
+			isa = PBXGroup;
+			children = (
+				FF775DA7296B4F4800DFB500 /* PostRepositoryCellReactor.swift */,
+			);
+			path = CellReactor;
+			sourceTree = "<group>";
+		};
+		FF775DA4296B4E7B00DFB500 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FF775DA5296B4F1200DFB500 /* PostRepositoryListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FF775DAD296B953200DFB500 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FF775DB9296BDA0700DFB500 /* DataSources */,
+				FF775DBC296BDC2800DFB500 /* Components */,
+				FF775DB2296B965C00DFB500 /* Reactor */,
+				FF775DAE296B954C00DFB500 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FF775DB2296B965C00DFB500 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				FF775DBF296BDCAE00DFB500 /* CellReactor */,
+				FF775DB3296B966F00DFB500 /* ProfileViewReactor.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
+		FF775DB9296BDA0700DFB500 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				FF775DBA296BDA1F00DFB500 /* ProfileViewSection.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		FF775DBC296BDC2800DFB500 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FF775DBD296BDC5600DFB500 /* ProfileOrganizationsCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FF775DBF296BDCAE00DFB500 /* CellReactor */ = {
+			isa = PBXGroup;
+			children = (
+				FF775DC0296BDCC200DFB500 /* ProfileOrganizationsCellReactor.swift */,
+			);
+			path = CellReactor;
 			sourceTree = "<group>";
 		};
 		FF9CE3892965B452008265A0 = {
@@ -381,6 +479,7 @@
 		FFF182C22965B9FF00E452C4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FF775DAD296B953200DFB500 /* Profile */,
 				FF775D5E29699E4800DFB500 /* Main */,
 				FF775D512968AFBC00DFB500 /* Post */,
 				FF775D7C296AF9BB00DFB500 /* Search */,
@@ -444,6 +543,7 @@
 				FF1223202966F0CD00418A1B /* CommonWebDIContainer.swift */,
 				FF775D5A2968BF1D00DFB500 /* PostDIContainer.swift */,
 				FF775D7F296AFA1C00DFB500 /* SearchDIContainer.swift */,
+				FF775DB0296B957800DFB500 /* ProfileDIContainer.swift */,
 			);
 			path = Dependency;
 			sourceTree = "<group>";
@@ -453,6 +553,9 @@
 			children = (
 				FF1223272968432F00418A1B /* Token.swift */,
 				FF775D6F2969CC8200DFB500 /* Search.swift */,
+				FF775DAB296B683A00DFB500 /* Star.swift */,
+				FF775DB5296B9E4E00DFB500 /* Profile.swift */,
+				FF775DB7296BC73300DFB500 /* Organizations.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -645,20 +748,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFF182EB2965FF8300E452C4 /* ApiHelper.swift in Sources */,
+				FF775DAC296B683A00DFB500 /* Star.swift in Sources */,
 				FFF182D32965DC7500E452C4 /* SplashViewReactor.swift in Sources */,
 				FF775D8E296B071600DFB500 /* SearchRecentlyKeywordCellReactor.swift in Sources */,
+				FF775DB1296B957800DFB500 /* ProfileDIContainer.swift in Sources */,
 				FF9CE3962965B452008265A0 /* AppDelegate.swift in Sources */,
 				FFF182CD2965C0B800E452C4 /* UIColor+Extensions.swift in Sources */,
 				FF775D80296AFA1C00DFB500 /* SearchDIContainer.swift in Sources */,
 				FF775D86296AFD7100DFB500 /* SearchViewSection.swift in Sources */,
+				FF775DAF296B954C00DFB500 /* ProfileViewController.swift in Sources */,
+				FF775DA6296B4F1200DFB500 /* PostRepositoryListCell.swift in Sources */,
 				FF775D5B2968BF1D00DFB500 /* PostDIContainer.swift in Sources */,
 				FFCC890C2966C2B300AAD594 /* SignInDIContainer.swift in Sources */,
 				FFF182E52965F99C00E452C4 /* Entity+Extensions.swift in Sources */,
 				FF775D6029699E6100DFB500 /* MainViewController.swift in Sources */,
+				FF775DAA296B626B00DFB500 /* RepositoryEmptyView.swift in Sources */,
 				FFF182DD2965E6D200E452C4 /* BaseDIContainer.swift in Sources */,
 				FFCC88FB2966131000AAD594 /* CommonWebViewReactor.swift in Sources */,
 				FF775D732969E0C200DFB500 /* APIError.swift in Sources */,
 				FF12232E2968AA5800418A1B /* UserDefaults+Extensions.swift in Sources */,
+				FF775DBB296BDA1F00DFB500 /* ProfileViewSection.swift in Sources */,
 				FFF182EE2966000000E452C4 /* BaseRouter.swift in Sources */,
 				FFCC88FD296615AD00AAD594 /* ReactorKit+Extensions.swift in Sources */,
 				FF9CE3982965B452008265A0 /* SceneDelegate.swift in Sources */,
@@ -674,10 +783,15 @@
 				FF775D78296A034300DFB500 /* UIView+Extensions.swift in Sources */,
 				FFF182CF2965C8C000E452C4 /* UIViewController+Extensions.swift in Sources */,
 				FF1223282968432F00418A1B /* Token.swift in Sources */,
+				FF775DA1296B4C8E00DFB500 /* PostViewSection.swift in Sources */,
+				FF775DA8296B4F4800DFB500 /* PostRepositoryCellReactor.swift in Sources */,
+				FF775DB8296BC73300DFB500 /* Organizations.swift in Sources */,
 				FFCC89042966B6AE00AAD594 /* SignInViewController.swift in Sources */,
 				FFF182C92965BCDB00E452C4 /* SplashViewController.swift in Sources */,
+				FF775DC1296BDCC200DFB500 /* ProfileOrganizationsCellReactor.swift in Sources */,
 				FF775D6E2969A40500DFB500 /* String+Extensions.swift in Sources */,
 				FF12231F2966E1B800418A1B /* UIAlertController+Extensions.swift in Sources */,
+				FF775DB6296B9E4E00DFB500 /* Profile.swift in Sources */,
 				FF1223212966F0CE00418A1B /* CommonWebDIContainer.swift in Sources */,
 				FF775D76296A030B00DFB500 /* SearchView.swift in Sources */,
 				FF775D702969CC8200DFB500 /* Search.swift in Sources */,
@@ -685,6 +799,8 @@
 				FF775D592968BE5200DFB500 /* PostViewReactor.swift in Sources */,
 				FF775D88296B014D00DFB500 /* GCMLeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				FF775D83296AFA7400DFB500 /* SearchViewReactor.swift in Sources */,
+				FF775DB4296B966F00DFB500 /* ProfileViewReactor.swift in Sources */,
+				FF775DBE296BDC5600DFB500 /* ProfileOrganizationsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -59,7 +59,7 @@ public final class SearchViewReactor: Reactor {
         let fromRefreshSectionMutation = SearchKeywordTransformType.event.flatMap { [weak self] event in
             self?.updateRecentlyKeyword(from: event) ?? .empty()
         }
-        return fromRefreshSectionMutation
+        return Observable.of(mutation, fromRefreshSectionMutation).merge()
     }
     
     

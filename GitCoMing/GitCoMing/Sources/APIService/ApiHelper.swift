@@ -13,6 +13,7 @@ import RxSwift
 public protocol APiHelper {
     func requestOutBound<T>(endPoint: NetWorkCofigure, parameter: [String: String]) -> Observable<T> where T: Decodable
     func requestInBound<T>(endPoint: NetWorkCofigure) -> Observable<T> where T: Decodable
+    func requestToNonKeyBound<T>(endPoint: NetWorkCofigure) -> Observable<T> where T: Decodable
 }
 
 
@@ -118,6 +119,49 @@ public final class APiManager: APiHelper {
                 }
             
             
+            return Disposables.create()
+        }
+    }
+    
+    
+    public func requestToNonKeyBound<T>(endPoint: NetWorkCofigure) -> Observable<T> where T : Decodable {
+        let urlEndPoint = endPoint.baseURL + endPoint.path
+        
+        return Observable.create { observer in
+            AF.request(
+                urlEndPoint,
+                method: endPoint.method,
+                encoding: endPoint.encoding,
+                headers: endPoint.headers
+            ).responseData { response in
+                switch response.result {
+                case let .success(data):
+                    print("success : \(data)")
+                    do {
+                        let baseEntity = try JSONDecoder().decode(T.self, from: data)
+                        observer.onNext(baseEntity)
+                        observer.onCompleted()
+                        debugPrint("=========BASE EVENT==========")
+                        debugPrint("=======\(baseEntity)==========")
+                        debugPrint("=========COMPLETE========")
+                    } catch {
+                        print(error.localizedDescription)
+                        observer.onError(APIError.messageDescription(error.localizedDescription))
+                    }
+                case let .failure(error):
+                    switch response.response?.statusCode {
+                    case 304:
+                        observer.onError(APIError.isNotModified)
+                    case 422:
+                        observer.onError(APIError.isValidationEntityFailed)
+                    case 503:
+                        observer.onError(APIError.ServiceUnavailable)
+                    default:
+                        observer.onError(APIError.messageDescription(error.localizedDescription))
+                    }
+                    debugPrint(error.localizedDescription)
+                }
+            }
             return Disposables.create()
         }
     }
