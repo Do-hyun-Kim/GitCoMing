@@ -90,6 +90,12 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
         $0.minimumInteritemSpacing = 10
     }
     
+    private let logoutButton: UIButton = UIButton(type: .custom).then {
+        $0.setTitle("Log Out", for: .normal)
+        $0.setTitleColor(UIColor.gitWhite, for: .normal)
+        $0.backgroundColor = .gitDarkGray
+    }
+    
     private lazy var organizationsCollectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: organizationsFlowLayout).then {
         $0.register(ProfileOrganizationsCell.self, forCellWithReuseIdentifier: "ProfileOrganizationsCell")
         $0.backgroundColor = .gitWhite
@@ -147,7 +153,7 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
     //MARK: Configure
     public override func configure() {
         
-        _ = [userSearchView, userInfoContainerView, organizationsCollectionView, activityIndicatorView].map {
+        _ = [userSearchView, userInfoContainerView, organizationsCollectionView, logoutButton ,activityIndicatorView].map {
             self.view.addSubview($0)
         }
         
@@ -220,6 +226,14 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
             $0.height.equalTo(150)
         }
         
+        logoutButton.snp.makeConstraints {
+            $0.top.equalTo(organizationsCollectionView.snp.bottom).offset(40)
+            $0.left.right.equalTo(organizationsCollectionView)
+            $0.height.equalTo(44)
+        }
+        
+        
+        
         activityIndicatorView.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
@@ -243,6 +257,17 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
             .subscribe(onNext: { vc, _ in
                 let searchViewController = SearchDIContainer().makeViewController()
                 vc.navigationController?.pushViewController(searchViewController, animated: true)
+            }).disposed(by: disposeBag)
+        
+        logoutButton.rx
+            .tap
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .withUnretained(self)
+            .subscribe(onNext: { vc, _ in
+                UserDefaults.standard.remove(forKey: .accessToken)
+                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                        let delegate = windowScene.delegate as? SceneDelegate else { return }
+                delegate.didShowLoginController()
             }).disposed(by: disposeBag)
         
         NotificationCenter.default.rx
