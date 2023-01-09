@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "gitGrass.png",
+      "filename" : "off.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "gtiGrass.png",
+      "filename" : "off@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Rectangle 27.png",
+      "filename" : "off@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

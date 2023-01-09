@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "gitGrass.png",
+      "filename" : "emptyReposity.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "gtiGrass.png",
+      "filename" : "emptyRepository.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Rectangle 27.png",
+      "filename" : "emptyRepository 1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
