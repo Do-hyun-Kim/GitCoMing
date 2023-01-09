@@ -178,6 +178,7 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
         
         userProfileImageView.snp.makeConstraints {
             $0.width.height.equalTo(80)
+            $0.left.equalToSuperview().offset(20)
             $0.top.equalTo(userProfileNameLabel.snp.bottom).offset(10)
             $0.centerX.equalTo(userProfileNameLabel)
         }

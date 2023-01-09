@@ -61,6 +61,8 @@ public final class SignInViewController: BaseViewController<SignInViewReactor> {
     
     //MARK: Configure
     public override func configure() {
+        self.view.backgroundColor = .gitWhite
+        
         _ = [signInLogoImageView, signInAppDescriptionLabel ,signInButton, activityIndicatorView].map {
             self.view.addSubview($0)
         }
