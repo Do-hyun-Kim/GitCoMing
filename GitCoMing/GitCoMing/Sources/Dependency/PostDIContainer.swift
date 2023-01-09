@@ -58,7 +58,6 @@ final class PostViewRepo: PostRepository {
     func responseSearchRepository(_ keyword: String, pages: String) -> Observable<PostViewReactor.Mutation> {
         
         let createSearchRepository = postApiService.requestInBound(endPoint: .init(networkAPi: .searchRepo(keyword, pages))).flatMap { (data: [Search]) -> Observable<PostViewReactor.Mutation> in
-            print("test Repository ")
             return .just(.requestSearchRepository(data))
         }
         

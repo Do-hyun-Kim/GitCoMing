@@ -127,6 +127,10 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        debugPrint(#function)
+    }
+    
     public override func viewWillLayoutSubviews() {
         userProfileImageView.layer.cornerRadius = userProfileImageView.frame.height / 2.0
     }

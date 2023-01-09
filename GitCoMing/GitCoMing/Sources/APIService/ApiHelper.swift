@@ -89,7 +89,6 @@ public final class APiManager: APiHelper {
                 .responseData { response in
                     switch response.result {
                     case let .success(data):
-                        print("return Success: inbound")
                         do {
                             let baseEntity = try JSONDecoder().decode(Base<T>.self, from: data)
                             if let entity = baseEntity.items {
@@ -100,7 +99,6 @@ public final class APiManager: APiHelper {
                             debugPrint("=======\(baseEntity)==========")
                             debugPrint("=========COMPLETE========")
                         } catch {
-                            print(error.localizedDescription)
                             observer.onError(APIError.messageDescription(error.localizedDescription))
                         }
                     case let .failure(error):
@@ -136,7 +134,6 @@ public final class APiManager: APiHelper {
             ).responseData { response in
                 switch response.result {
                 case let .success(data):
-                    print("success : \(data)")
                     do {
                         let baseEntity = try JSONDecoder().decode(T.self, from: data)
                         observer.onNext(baseEntity)
@@ -145,7 +142,6 @@ public final class APiManager: APiHelper {
                         debugPrint("=======\(baseEntity)==========")
                         debugPrint("=========COMPLETE========")
                     } catch {
-                        print(error.localizedDescription)
                         observer.onError(APIError.messageDescription(error.localizedDescription))
                     }
                 case let .failure(error):

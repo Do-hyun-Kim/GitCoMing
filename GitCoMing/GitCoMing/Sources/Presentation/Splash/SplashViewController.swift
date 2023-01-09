@@ -47,6 +47,10 @@ final class SplashViewController: BaseViewController<SplashViewReactor> {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        debugPrint(#function)
+    }
+    
     
     //MARK: LifeCycle
     override func viewDidLoad() {

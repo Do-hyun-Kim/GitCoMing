@@ -47,6 +47,10 @@ public final class SignInViewController: BaseViewController<SignInViewReactor> {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        debugPrint(#function)
+    }
+    
     
     //MARK: LifeCycle
     public override func viewDidLoad() {

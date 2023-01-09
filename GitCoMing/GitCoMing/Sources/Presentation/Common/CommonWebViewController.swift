@@ -38,6 +38,10 @@ public final class CommonWebViewController: BaseViewController<CommonWebViewReac
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        debugPrint(#function)
+    }
+    
     public override func loadView() {
         self.view = webView
     }

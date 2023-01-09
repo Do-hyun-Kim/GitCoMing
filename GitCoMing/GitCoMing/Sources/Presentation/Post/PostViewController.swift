@@ -66,6 +66,10 @@ public final class PostViewController: BaseViewController<PostViewReactor> {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        debugPrint(#function)
+    }
+    
     //MARK: LifeCycle
     public override func viewDidLoad() {
         super.viewDidLoad()
