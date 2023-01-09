@@ -13,9 +13,10 @@ final class SearchView: BaseView {
     
     
     //MARK: Property
+    private(set) var placeHolderDescription: String = ""
+    
     private let placeHolderLabel = UILabel().then {
         $0.textColor = .gitSilverGray
-        $0.text = "찾는 레포지토리를 검색해보세요.".localized()
         $0.font = .regular(size: 14)
     }
     
@@ -24,8 +25,9 @@ final class SearchView: BaseView {
         $0.contentMode = .scaleToFill
     }
     
-    init() {
+    init(placeHolderDescription: String) {
         super.init(frame: .zero)
+        self.placeHolderDescription = placeHolderDescription
         configure()
     }
     
@@ -37,6 +39,8 @@ final class SearchView: BaseView {
         self.clipsToBounds = true
         self.layer.cornerRadius = 12
         self.backgroundColor = .gitLightGray
+        
+        placeHolderLabel.text = placeHolderDescription
         
         _ = [placeHolderLabel, searchImageView].map {
             self.addSubview($0)

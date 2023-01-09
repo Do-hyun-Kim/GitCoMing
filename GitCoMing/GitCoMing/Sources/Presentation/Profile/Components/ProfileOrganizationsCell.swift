@@ -69,7 +69,7 @@ final class ProfileOrganizationsCell: BaseCollectionViewCell<ProfileOrganization
     override func bind(reactor: ProfileOrganizationsCellReactor) {
         reactor.state
             .map { $0.organizationsItem.organizationsName }
-            .observe(on: MainScheduler.instance)
+            .observe(on: MainScheduler.asyncInstance)
             .bind(to: organizationsDescriptionLabel.rx.text)
             .disposed(by: disposeBag)
         

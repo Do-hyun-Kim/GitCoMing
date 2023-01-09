@@ -21,7 +21,7 @@ public final class PostViewController: BaseViewController<PostViewReactor> {
     
     //MARK: Property
     
-    private let searchView: SearchView = SearchView().then {
+    private let searchView: SearchView = SearchView(placeHolderDescription: "찾는 레포지토리를 검색해보세요.".localized()).then {
         $0.layer.borderColor = UIColor.gitLightGray?.cgColor
         $0.layer.borderWidth = 2
     }

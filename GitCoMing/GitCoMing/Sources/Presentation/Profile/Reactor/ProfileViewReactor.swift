@@ -14,6 +14,8 @@ import RxSwift
 enum ProfileTransformType: GlobalEventType {
     public enum Event {
         case responseUserOrganizations
+        case updateOrganizations(userName: String)
+        case updateToUser(keyword: String)
     }
     case none
 }
@@ -27,6 +29,7 @@ public final class ProfileViewReactor: Reactor {
     
     public enum Action {
         case viewDidLoad
+        case searchToUserProfile(String)
     }
     
     public enum Mutation {
@@ -52,6 +55,14 @@ public final class ProfileViewReactor: Reactor {
         )
     }
     
+    
+    public func transform(action: Observable<Action>) -> Observable<Action> {
+        let fromRequestAnonymousProfileAction = ProfileTransformType.event.flatMap { [weak self] event in
+            self?.updateToUser(from: event) ?? .empty()
+        }
+        return Observable.of(action, fromRequestAnonymousProfileAction).merge()
+    }
+    
     public func transform(mutation: Observable<Mutation>) -> Observable<Mutation> {
         let fromRequestOrganizationsMutation = ProfileTransformType.event.flatMap { [weak self] event in
             self?.requestUserOrganizations(from: event) ?? .empty()
@@ -71,6 +82,15 @@ public final class ProfileViewReactor: Reactor {
                 profileRepository.responseMyProfile(),
                 willUpdateProfile
             )
+        case let .searchToUserProfile(keyword):
+            let didUpdateUserProfie = Observable<Mutation>.just(.setUserProfileLoading(true))
+            let willUpdateUserProfile = Observable<Mutation>.just(.setUserProfileLoading(false))
+            
+            return .concat(
+                didUpdateUserProfie,
+                profileRepository.responseAnonymousProfile(keyword),
+                willUpdateUserProfile
+            )
         }
     }
     
@@ -89,7 +109,6 @@ public final class ProfileViewReactor: Reactor {
             let sectionIndex = self.getIndex(section: .organizations([]))
             newState.organizationsItem = organizationsItem
             newState.profileSection[sectionIndex] = profileRepository.responseOrganizationsSectionitem(item: organizationsItem)
-            print("response Organizations: \(organizationsItem)")
         }
         
         return newState
@@ -102,12 +121,27 @@ public final class ProfileViewReactor: Reactor {
 
 private extension ProfileViewReactor {
     
+    private func updateToUser(from event: ProfileTransformType.Event) -> Observable<Action> {
+        switch event {
+        case let .updateToUser(keyword):
+            return .just(.searchToUserProfile(keyword))
+        default:
+            return .empty()
+        }
+    }
+    
+    
     private func requestUserOrganizations(from event: ProfileTransformType.Event) -> Observable<Mutation> {
         switch event {
         case .responseUserOrganizations:
             guard let userName = self.currentState.profileItem?.userName else { return .empty() }
             let requestOrganizations = profileRepository.responseOrganizations(userName)
             return requestOrganizations
+        case let .updateOrganizations(userName):
+            let updateToOrganizations = profileRepository.responseOrganizations(userName)
+            return updateToOrganizations
+        default:
+            return .empty()
         }
         
     }

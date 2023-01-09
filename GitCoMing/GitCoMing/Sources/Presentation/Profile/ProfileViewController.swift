@@ -13,11 +13,19 @@ import ReactorKit
 import RxDataSources
 import RxSwift
 import RxCocoa
+import RxGesture
+
 
 public final class ProfileViewController: BaseViewController<ProfileViewReactor> {
     
     
     //MARK: Property
+    private var userSearchView: SearchView = SearchView(placeHolderDescription: "유저를 검색해 보세요.".localized()).then {
+        $0.layer.borderColor = UIColor.gitLightGray?.cgColor
+        $0.layer.borderWidth = 2
+    }
+    
+    
     private let userInfoContainerView = UIView().then {
         $0.backgroundColor = .gitWhite
         $0.layer.cornerRadius = 15
@@ -82,7 +90,7 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
         $0.minimumInteritemSpacing = 10
     }
     
-    private lazy var organizationsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: organizationsFlowLayout).then {
+    private lazy var organizationsCollectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: organizationsFlowLayout).then {
         $0.register(ProfileOrganizationsCell.self, forCellWithReuseIdentifier: "ProfileOrganizationsCell")
         $0.backgroundColor = .gitWhite
         $0.clipsToBounds = false
@@ -100,16 +108,16 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
     private lazy var organizationsDataSources: RxCollectionViewSectionedReloadDataSource<ProfileSection> = .init(configureCell: { datasource, collectionView, indexPath, sectionItem in
         
         switch sectionItem {
-    case let .organizationsItem(cellReactor):
-        guard let organizationsCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileOrganizationsCell", for: indexPath) as? ProfileOrganizationsCell else { return UICollectionViewCell() }
-        organizationsCell.reactor = cellReactor
-        
-        return organizationsCell
-    }
+        case let .organizationsItem(cellReactor):
+            guard let organizationsCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileOrganizationsCell", for: indexPath) as? ProfileOrganizationsCell else { return UICollectionViewCell() }
+            organizationsCell.reactor = cellReactor
+            organizationsCell.layoutIfNeeded()
+            return organizationsCell
+        }
         
     })
     
-
+    
     override init(reactor: ProfileViewReactor?) {
         defer { self.reactor = reactor }
         super.init()
@@ -135,7 +143,7 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
     //MARK: Configure
     public override func configure() {
         
-        _ = [userInfoContainerView, organizationsCollectionView].map {
+        _ = [userSearchView, userInfoContainerView, organizationsCollectionView, activityIndicatorView].map {
             self.view.addSubview($0)
         }
         
@@ -143,8 +151,15 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
             userInfoContainerView.addSubview($0)
         }
         
-        userInfoContainerView.snp.makeConstraints {
+        userSearchView.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.topMargin).offset(20)
+            $0.left.equalToSuperview().offset(20)
+            $0.right.equalToSuperview().offset(-20)
+            $0.height.equalTo(44)
+        }
+        
+        userInfoContainerView.snp.makeConstraints {
+            $0.top.equalTo(userSearchView.snp.bottom).offset(20)
             $0.left.equalToSuperview().offset(20)
             $0.right.equalToSuperview().offset(-20)
             $0.height.equalTo(150)
@@ -200,6 +215,10 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
             $0.height.equalTo(150)
         }
         
+        activityIndicatorView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+        
         
     }
     
@@ -211,6 +230,26 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
+        userSearchView.rx
+            .tapGesture()
+            .when(.recognized)
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .withUnretained(self)
+            .subscribe(onNext: { vc, _ in
+                let searchViewController = SearchDIContainer().makeViewController()
+                vc.navigationController?.pushViewController(searchViewController, animated: true)
+            }).disposed(by: disposeBag)
+        
+        NotificationCenter.default.rx
+            .notification(.searchToPost)
+            .withUnretained(self)
+            .subscribe(onNext: { vc, userinfo in
+                guard let searchKeywrod = userinfo.object as? String else { return }
+                ProfileTransformType.event.onNext(.updateToUser(keyword: searchKeywrod))
+                ProfileTransformType.event.onNext(.updateOrganizations(userName: searchKeywrod))
+            }).disposed(by: disposeBag)
+        
+        
         organizationsCollectionView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
@@ -221,7 +260,7 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
             .disposed(by: disposeBag)
         
         reactor.state
-            .filter { $0.profileItem != nil}
+            .filter { $0.profileItem != nil }
             .single()
             .subscribe(onNext: { _ in
                 ProfileTransformType.event.onNext(.responseUserOrganizations)
@@ -258,9 +297,13 @@ public final class ProfileViewController: BaseViewController<ProfileViewReactor>
             .observe(on: MainScheduler.instance)
             .bind(to: userFollwingCountLabel.rx.text)
             .disposed(by: disposeBag)
-
-                
         
+        
+        reactor.state
+            .map { $0.isUserProfileLoading }
+            .observe(on: MainScheduler.instance)
+            .bind(to: activityIndicatorView.rx.isAnimating)
+            .disposed(by: disposeBag)
         
     }
     
