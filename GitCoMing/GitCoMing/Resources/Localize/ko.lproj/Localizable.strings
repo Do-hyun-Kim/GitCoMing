@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  GitCoMing
+
+  Created by Kim dohyun on 2023/01/07.
+  
+*/
+
+"main.tabItem.home" = "홈";
+"main.tabItem.profile" = "마이";
+"찾는 레포지토리를 키워드로 검색해보세요." = "찾는 레포지토리를 키워드로 검색해보세요.";
+"찾는 레포지토리를 검색해보세요." = "찾는 레포지토리를 검색해보세요.";
+"검색한 레포지토리가 없습니다." = "검색한 레포지토리가 없습니다.";
+"최근 검색어" = "최근 검색어";
+"유저를 검색해 보세요." = "유저를 검색해 보세요.";
+"followers" = "followers";
+"following" = "following";
+"Organizations" = "Organizations";

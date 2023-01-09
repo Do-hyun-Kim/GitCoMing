@@ -23,7 +23,7 @@ public final class CommonWebViewReactor: Reactor {
     public struct State {
         var isWebLoading: Bool
         var gitURL: URL
-        @Pulse var gitAccessToken: Token?
+        var gitAccessToken: Token?
     }
     
     public enum Mutation {
@@ -73,7 +73,7 @@ public final class CommonWebViewReactor: Reactor {
             
         case let .setAccessToken(token):
             newState.gitAccessToken = token
-            UserDefaults.standard.set(newState.gitAccessToken, forKey: .accessToken)
+            UserDefaults.standard.set(newState.gitAccessToken?.accessToken, forKey: .accessToken)
         }
         
         return newState

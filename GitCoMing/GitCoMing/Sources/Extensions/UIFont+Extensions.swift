@@ -18,4 +18,8 @@ public extension UIFont {
       return .init(name: "AppleSDGothicNeo-Bold", size: size)!
     }
     
+    static func semiBold(size: CGFloat) -> Self {
+        return .init(name: "AppleSDGothicNeo-Semibold", size: size)!
+    }
+    
 }

@@ -7,12 +7,21 @@
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>github.com</key>
+            <key>api.github.com</key>
 			<dict>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
+                <key>NSExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+                <key>NSTemporaryExceptionMinimumTLSVersion</key>
+                <string>TLSv1.2</string>
 			</dict>
 		</dict>
 	</dict>
+    <key>UILaunchStoryboardName</key>
+    <string>Launch Screen</string>
 	<key>GCMRedirectURI</key>
 	<string>gitcoming://login</string>
 	<key>GCMClientSecrets</key>
@@ -21,8 +30,6 @@
 	<string>read:user,user:email</string>
 	<key>GCMClientId</key>
 	<string>1a75c931ee47226210d9</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -32,7 +39,6 @@
 			<key>UIWindowSceneSessionRoleApplication</key>
 			<array>
 				<dict>
-					<key>UISceneStoryboardFile</key>
 					<string></string>
 					<key>UISceneConfigurationName</key>
 					<string>Default Configuration</string>
@@ -42,5 +48,7 @@
 			</array>
 		</dict>
 	</dict>
+    <key>UIUserInterfaceStyle</key>
+    <string>Light</string>
 </dict>
 </plist>

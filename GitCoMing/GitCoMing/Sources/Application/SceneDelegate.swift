@@ -9,16 +9,25 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    //MARK: Property
     var window: UIWindow?
+    private var gitNavigationController: GCMNavigationViewController!
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = .init(windowScene: scene)
         
-        willShowSplashController()
+        if UserDefaults.standard.string(forKey: .accessToken).isEmpty {
+            willShowSplashController()
+        } else {
+            willShowPostController()
+        }
     }
+}
 
+
+extension SceneDelegate {
     
     private func willShowSplashController() {
         let splashController = SplashViewController(reactor: SplashViewReactor())
@@ -26,18 +35,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = splashController
         window?.makeKeyAndVisible()
     }
+    
+    private func willShowPostController() {
+        
+        let postViewController = PostDIContainer().makeViewController()
+        
+        gitNavigationController = GCMNavigationViewController(
+            rootViewController: postViewController
+        )
+        
+        window?.rootViewController = gitNavigationController
+        window?.makeKeyAndVisible()
+    }
+    
 }
 
 
-
+/// SplashViewDelegate ➡️ LoginViewController RootViewController 전환
 extension SceneDelegate: CoordinatorDelegate {
-    func didShowMainController() {
+    func didShowLoginController() {
         let signInController = SignInDIContainer().makeViewController()
         
         window?.rootViewController = signInController
         window?.makeKeyAndVisible()
     }
-    
-    
-    
 }

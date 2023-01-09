@@ -38,6 +38,10 @@ public final class CommonWebViewController: BaseViewController<CommonWebViewReac
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        debugPrint(#function)
+    }
+    
     public override func loadView() {
         self.view = webView
     }
@@ -78,6 +82,16 @@ public final class CommonWebViewController: BaseViewController<CommonWebViewReac
             .map { $0.isWebLoading}
             .bind(to: activityIndicatorView.rx.isAnimating)
             .disposed(by: disposeBag)
+        
+        reactor.state
+            .compactMap { $0.gitAccessToken }
+            .filter { !$0.accessToken.isEmpty }
+            .withUnretained(self)
+            .subscribe (onNext: { vc,  _ in
+                vc.didUpdateRootViewController()
+            }).disposed(by: disposeBag)
+            
+            
     }
     
     
@@ -90,6 +104,16 @@ public final class CommonWebViewController: BaseViewController<CommonWebViewReac
                 self.reactor?.action.onNext(.requestAccessToken(redirectCode))
             }
         }
+    }
+    
+    private func didUpdateRootViewController() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                let delegate = windowScene.delegate as? SceneDelegate else { return }
+        let postViewController = PostDIContainer().makeViewController()
+        let gitNavigationController = GCMNavigationViewController(rootViewController: postViewController)
+        
+        delegate.window?.rootViewController = gitNavigationController
+        delegate.window?.makeKeyAndVisible()
     }
 }
 
